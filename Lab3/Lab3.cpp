@@ -1,7 +1,12 @@
 #include <iostream>
+#include "LinkedList.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    LinkedList<int> list;
+
+    list.Push_back(3);
+    list.Push_back(5);
+    list.Print();
 }
 
