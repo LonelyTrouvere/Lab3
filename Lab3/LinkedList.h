@@ -1,5 +1,8 @@
+#pragma once
 #include "List.h"
 #include <limits>
+#include <stdexcept>
+
 template <typename T>
 class LinkedList : public List<T>
 {
