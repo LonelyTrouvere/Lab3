@@ -119,8 +119,18 @@ void LinkedList<T>::Print() {
 template <typename T>
 T LinkedList<T>::Peek()
 {
-    if (head == nullptr) return NULL;
-    return head->data;
+    try {
+        if (head == nullptr)
+        {
+            std::string error = "List is empty";
+            throw (error);
+        }
+        return head->data;
+    }
+    catch (std::string message)
+    {
+        std::cout << message << '\n';
+    }
 }
 
 
