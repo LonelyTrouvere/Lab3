@@ -1,16 +1,18 @@
 #include <iostream>
 #include "LinkedList.h"
 #include "ArrayList.h"
+#include "Figure.h"
 
 int main()
 {
 
-	LinkedList<int> list;
-	list.Push_back(3);
-	list.Push_back(5);
+	Figure f;
 
-	for (int i = 0; i < list.Size(); i++)
-		std::cout << list[i]+1 << ' ';
+	f.Add(1, 1);
+	f.Add(0, 1);
+	f.Add(0, 0);
+	f.Add(1, 0);
 
+	std::cout << f.QuadrangleType();
 }
 

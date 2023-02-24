@@ -1,4 +1,11 @@
 #include "Figure.h"
+
+Figure::Figure()
+{
+    ArrayList<std::pair<double, double>> list;
+    points = list;
+}
+
 Figure::Figure(ArrayList<std::pair<double, double>> list)
 {
 	points = list;
@@ -98,4 +105,180 @@ bool Figure::isRegular() {
     }
 
     return true;
+}
+
+Figure::ETriangleSideType Figure::TriangleSideType()
+{
+    if (this->isRegular()) return Figure::ETriangleSideType::EQUILATERAL;
+    else
+        if (this->IsoscelesTriangle()) return Figure::ETriangleSideType::ISOSCELES;
+        else
+            return Figure::ETriangleSideType::ORDINARY;
+}
+
+Figure::ETriangleAngleType Figure::TriangleAngleType()
+{
+    if (this->ObtuseAngular()) Figure::ETriangleAngleType::OBTUSE;
+    else
+        if (this->RectangularTriangle()) Figure::ETriangleAngleType::RECTANGULAR;
+        else
+            return Figure::ETriangleAngleType::ACUTE;
+}
+
+Figure::EQuadrangleType Figure::QuadrangleType()
+{
+    if (this->Square()) return Figure::EQuadrangleType::SQUARE;
+    if (this->Diamond()) return Figure::EQuadrangleType::DIAMOND;
+    if (this->Rectangle()) return Figure::EQuadrangleType::RECTANGLE;
+    if (this->Parallelogram()) return Figure::EQuadrangleType::PARALLELOGRAM;
+    if (this->Trapeze()) return Figure::EQuadrangleType::TRAPEZE;
+    return Figure::EQuadrangleType::ARBITARY;
+}
+
+Figure::ETrapezeType Figure::TrapezeType()
+{
+    if (this->IsoscelesTrapeze()) return Figure::ETrapezeType::ISOSCELEST;
+    if (this->RectengularTrapeze()) return Figure::ETrapezeType::RECTANGULART;
+    return Figure::ETrapezeType::ARBITARYT;
+}
+
+//Перевірка трикутника на рівнобедренність
+bool Figure::IsoscelesTriangle() {
+
+    double a = Distance(points[0], points[1]),
+    b = Distance(points[1], points[2]),
+    c = Distance(points[0], points[2]);
+
+    if (a == b || b == c || a == c)
+        return true;
+    else
+        return false;
+}
+
+// Перевірка на прямокутний трикутник
+bool Figure::RectangularTriangle()
+{
+    if (points.Size() != 3) return false;
+
+    double phi1 = Angle(points[0], points[1], points[2]),
+        phi2 = Angle(points[1], points[2], points[0]),
+        phi3 = Angle(points[2], points[0], points[1]);
+
+    const double HALF_PI = M_PI/2;
+
+    if (phi1 == HALF_PI || phi2 == HALF_PI || phi3 == HALF_PI)
+        return true;
+
+    return false;
+}
+
+// Перевірка на тупокутний трикутник
+bool Figure::ObtuseAngular()
+{
+    double phi1 = Figure::Angle(points[0], points[1], points[2]),
+        phi2 = Figure::Angle(points[1], points[2], points[0]),
+        phi3 = Figure::Angle(points[2], points[0], points[1]);
+
+    const double HALF_PI = M_PI / 2;
+
+    if (phi1 > HALF_PI || phi2 > HALF_PI || phi3 > HALF_PI)
+        return true;
+
+    return false;
+}
+
+//Перевірка на паралелограм
+bool Figure::Parallelogram()
+{
+    double a = Distance(points[0], points[1]),
+        b = Distance(points[1], points[2]),
+        c = Distance(points[2], points[3]),
+        d = Distance(points[3], points[0]);
+
+    if (a == c && b == d)
+        return true;
+
+    return false;
+}
+
+//Перевірка на прямокутник
+bool Figure::Rectangle()
+{
+    double ang = Angle(points[1], points[2], points[3]);
+
+    if (this->Parallelogram() && ang == M_PI / 2)
+        return true;
+
+    return false;
+}
+
+//Перевірка на ромб
+bool Figure::Diamond()
+{
+    double a = Distance(points[0], points[1]),
+        b = Distance(points[1], points[2]),
+        c = Distance(points[2], points[3]),
+        d = Distance(points[3], points[0]);
+
+    if (a == b == c == d)
+        return true;
+
+    return false;
+}
+
+//Перевірка на квадрат
+bool Figure::Square()
+{
+    if (this->Rectangle() && this->Diamond())
+        return true;
+    return false;
+}
+
+//Перевірка на трапецію
+bool Figure::Trapeze()
+{
+    std::pair<double, double> a = { points[1].first - points[0].first, points[1].second - points[0].second },
+        b = { points[2].first - points[1].first, points[2].second - points[1].second },
+        c = { points[2].first - points[3].first, points[2].second - points[3].second },
+        d = { points[3].first - points[0].first, points[3].second - points[0].second };
+
+    if (a.first == c.first && c.first == 0) { a.first = a.second; c.first = c.second; }
+    if (b.first == d.first && d.first == 0) { b.first = b.second; d.first = d.second; }
+    if (a.second == c.second && c.second == 0) { a.second = a.first; c.second = c.first; }
+    if (b.second == d.second && d.second == 0) { b.second = b.first; d.second = d.first; }
+
+    if ((fabs(a.first / c.first) == fabs(a.second / c.second) && fabs(b.first / d.first) != fabs(b.second / d.second)) ||
+        (fabs(a.first / c.first) != fabs(a.second / c.second) && fabs(b.first / d.first) == fabs(b.second / d.second)))
+    {
+        return true;
+    }
+
+    return false;
+}
+
+//Перевірка на ріівнобедренну трапецію
+bool Figure::IsoscelesTrapeze()
+{
+    double a = Distance(points[0], points[1]),
+        b = Distance(points[1], points[2]),
+        c = Distance(points[2], points[3]),
+        d = Distance(points[3], points[0]);
+
+    if (this->Trapeze() && (a == c || b == d))
+        return true;
+
+    return false;
+}
+
+//Перевірка на прямокутну трапецію
+bool Figure::RectengularTrapeze()
+{
+    double phi1 = Angle(points[0], points[1], points[2]),
+        phi2 = Angle(points[1], points[2], points[3]),
+        phi3 = Angle(points[2], points[3], points[0]);
+
+    if (this->Trapeze() && (phi1 == M_PI / 2 || phi2 == M_PI / 2 || phi3 == M_PI / 2))
+        return true;
+
+    return false;
 }
