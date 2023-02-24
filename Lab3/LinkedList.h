@@ -23,11 +23,11 @@ private:
     Node* head;
 public:
     LinkedList();
+    T& operator[](int i) override;
     void Push_back(T data) override;
     void Pop_back() override;
-    void Set(T data, int i) override;
+    void Set(T data, int i);
     void Clear()override;
-    void Print()override;
     T Peek()override;
 };
 
@@ -36,6 +36,21 @@ LinkedList<T>::LinkedList() {
     head = nullptr;
     this->size = 0;
 }
+
+template<typename T>
+T& LinkedList<T>::operator[](int i) {
+    Node* temp = head;
+    int j = 0;
+    while (temp!=nullptr && j != i)
+    {
+        j++;
+        temp = temp->next;
+    }
+
+    if (temp)
+        return temp->data;
+}
+
 
 template <typename T>
 void LinkedList<T>::Push_back(T data) {
@@ -102,20 +117,6 @@ void LinkedList<T>::Set(T data, int i) {
     cur->data = data;
 }
 
-template<typename T>
-void LinkedList<T>::Print() {
-
-    if (!head)
-        return;
-
-    Node* cur = head;
-    while (cur)
-    {
-        std::cout << cur->data << '\n';
-        cur = cur->next;
-    }
-}
-
 template <typename T>
 T LinkedList<T>::Peek()
 {
@@ -132,8 +133,3 @@ T LinkedList<T>::Peek()
         std::cout << message << '\n';
     }
 }
-
-
-
-
-

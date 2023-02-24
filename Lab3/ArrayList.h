@@ -11,12 +11,10 @@ private:
     void Append();
 public:
     ArrayList();
-    T& operator[](int i);
+    T& operator[](int i) override;
     void Push_back(T data) override;
     void Pop_back() override;
-    void Set(T data, int i) override;
     void Clear()override;
-    void Print()override;
     T Peek()override;
 };
 
@@ -76,24 +74,12 @@ void ArrayList<T>::Pop_back() {
     this->size--;
 }
 
-template <typename T>
-void ArrayList<T>::Set(T data, int i)
-{
-    arr[i] = data;
-}
-
 template<typename T>
 void ArrayList<T>::Clear() {
     delete[]arr;
     arr = nullptr;
     MAX_SIZE = 1;
     this->size = 0;
-}
-
-template<typename T>
-void ArrayList<T>::Print() {
-    for (int i = 0; i < this->size; i++)
-        std::cout << arr[i] << ' ';
 }
 
 template <typename T>
