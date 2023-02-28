@@ -9,6 +9,8 @@ private:
 	int MAX_SIZE;
 	T* arr;
     void Append();
+    void ActualMergeSort(int l, int r);
+    void Merger(int l, int mid, int r);
 public:
     ArrayList();
     T& operator[](int i) override;
@@ -21,6 +23,7 @@ public:
     void InsertionSort() override;
     void BubbleSort() override;
     void SelectionSort() override;
+    void MergeSort() override;
 };
 
 template<typename T>
@@ -141,5 +144,64 @@ void ArrayList<T>::SelectionSort()
                 x = j;
             }
         std::swap(arr[i], arr[x]);
+    }
+}
+
+template <typename T>
+void ArrayList<T>::MergeSort()
+{
+    this->ActualMergeSort(0, this->size - 1);
+}
+
+template <typename T>
+void ArrayList<T>::ActualMergeSort(int l, int r)
+{
+    if (l >= r)
+        return;
+    int mid = l + (r - l) / 2;
+    ActualMergeSort(l, mid);
+    ActualMergeSort(mid + 1, r);
+    Merger(l, mid, r);
+}
+
+template <typename T>
+void ArrayList<T>::Merger(int l, int mid, int r)
+{
+    int _leftS = mid - l + 1, _rightS = r - mid;
+    T* leftSub = new T [_leftS], *rightSub = new T[_rightS];
+    
+    for (int i = 0; i < _leftS; i++)
+        leftSub[i] = arr[l + 1];
+    for (int i = 0; i < _rightS; i++)
+        rightSub[i] = arr[mid + i];
+
+    int i = 0, j = 0, k = l;
+    while (i < _leftS && j < _rightS)
+    {
+        if (leftSub[i] < rightSub[i])
+        {
+            arr[k] = leftSub[i];
+            i++;
+        }
+        else
+        {
+            arr[k] = rightSub[j];
+            j++;
+        }
+        k++;
+    }
+
+    while (i < _leftS)
+    {
+        arr[k] = leftSub[i];
+        i++;
+        k++;
+    }
+
+    while (j < _rightS)
+    {
+        arr[k] = rightSub[j];
+        j++;
+        k++;
     }
 }

@@ -21,6 +21,9 @@ private:
         }
     };
     Node* head;
+    void ActualMergeSort(Node* first);
+    Node *Middle(Node* nd);
+    Node *Merger(Node* l, Node* r);
 public:
     LinkedList();
     T& operator[](int i) override;
@@ -33,6 +36,7 @@ public:
     void InsertionSort() override;
     void BubbleSort() override;
     void SelectionSort() override;
+    void MergeSort() override;
 };
 
 template <typename T>
@@ -209,3 +213,75 @@ void LinkedList<T>::SelectionSort()
 
 }
 
+template <typename T>
+void LinkedList<T>::MergeSort()
+{
+    this->ActualMergeSort(head);
+}
+
+template <typename T>
+void LinkedList<T>::ActualMergeSort(Node* first)
+{
+    if (!first || !first->next)
+        return first;
+    Node* mid = Middle(first);
+    Node* l = first, *r = mid->next;
+
+    l = ActualMergeSort(l);
+    r = ActualMergeSort(r);
+    return Merger(l, r);
+}
+
+template <typename T>
+LinkedList<T>::Node* LinkedList<T>:: Middle(Node* nd)
+{
+    Node* fast = nd;
+    Node* slow = nd;
+    while (!fast && !fast->next)
+    {
+        slow = slow->next;
+        fast = fast->next->next;
+    }
+
+    return slow;
+}
+
+template <typename T>
+LinkedList<T>::Node* LinkedList<T>::Merger(Node* l, Node* r)
+{
+    Node* sorted = nullptr;
+    Node* tail = nullptr;
+
+    while (l && r)
+    {
+        Node* nxt = nullptr;
+        if (l->data < r->data)
+        {
+            nxt = l;
+            l = l->next;
+        }
+        else
+        {
+            nxt = r;
+            r = r->next;
+        }
+
+        if (tail)
+        {
+            tail->next = nxt;
+        }
+        else
+        {
+            sorted = next;
+            tail = nxt;
+        }
+        tail = tail->next;
+    }
+
+    if (l)
+        tail->next = l;
+    if (r)
+        tail->next = r;
+
+    return sorted;
+}

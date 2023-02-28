@@ -26,4 +26,5 @@ public:
 	virtual void InsertionSort() = 0;
 	virtual void BubbleSort() = 0;
 	virtual void SelectionSort() = 0;
+	virtual void MergeSort() = 0;
 };
