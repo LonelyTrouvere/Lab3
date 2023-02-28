@@ -21,4 +21,9 @@ public:
 		if (!size) return true;
 			return false;
 	}
+
+//sorts 
+	virtual void InsertionSort() = 0;
+	virtual void BubbleSort() = 0;
+	virtual void SelectionSort() = 0;
 };

@@ -29,6 +29,10 @@ public:
     void Set(T data, int i);
     void Clear()override;
     T Peek()override;
+//sorts
+    void InsertionSort() override;
+    void BubbleSort() override;
+    void SelectionSort() override;
 };
 
 template <typename T>
@@ -133,3 +137,75 @@ T LinkedList<T>::Peek()
         std::cout << message << '\n';
     }
 }
+
+template <typename T>
+void LinkedList<T>::InsertionSort()
+{
+    Node* sorted = nullptr;
+    Node* temp = head;
+    while (temp)
+    {
+        Node* curr = new Node();
+        curr->data = temp->data;
+        curr->next = nullptr;
+        if (sorted == nullptr || sorted->data >= curr->data) {
+            curr->next = sorted;
+            sorted = curr;
+        }
+        else {
+            Node* current = sorted;
+            while (current->next != nullptr
+                && current->next->data < curr->data) {
+                current = current->next;
+            }
+            curr->next = current->next;
+            current->next = curr;
+        }
+        temp = temp->next;
+    }
+    head = sorted;
+}
+
+template <typename T>
+void LinkedList<T>::BubbleSort()
+{
+    Node* curr = head;
+    Node* end = nullptr;
+    int i = 1;
+
+    while (end != head)
+    {
+        while (curr->next != end)
+        {
+            if (curr->data > curr->next->data)
+                std::swap(curr->data, curr->next->data);
+            curr = curr->next;
+            i++;
+        }
+        end = curr;
+        curr = head;
+        i = 1;
+    }
+    head = end;
+}
+
+template <typename T>
+void LinkedList<T>::SelectionSort()
+{
+    Node* temp = head;
+    while (temp)
+    {
+        Node* minimal = temp;
+        Node* curr = temp->next;
+        while (curr)
+        {
+            if (minimal->data > curr->data)
+                minimal = curr;
+            curr = curr->next;
+        }
+        std::swap(temp->data, minimal->data);
+        temp = temp->next;
+    }
+
+}
+

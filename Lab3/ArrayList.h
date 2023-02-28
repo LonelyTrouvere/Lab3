@@ -16,6 +16,11 @@ public:
     void Pop_back() override;
     void Clear()override;
     T Peek()override;
+
+//sorts
+    void InsertionSort() override;
+    void BubbleSort() override;
+    void SelectionSort() override;
 };
 
 template<typename T>
@@ -97,5 +102,44 @@ T ArrayList<T>::Peek()
     catch (std::string message)
     {
         std::cout<<message<<'\n';
+    }
+}
+
+template <typename T>
+void ArrayList<T>::InsertionSort()
+{
+    for (int i = 0; i < this->size; i++)
+    {
+        int j = i;
+        while (j > 0 && arr[j] < arr[j - 1])
+        {
+            std::swap(arr[j], arr[j - 1]);
+            j--;
+        }
+    }
+}
+
+template <typename T>
+void ArrayList<T>::BubbleSort()
+{
+    for (int i = 0; i < this->size - 1; i++)
+        for (int j = 0; j < this->size - i - 1; j++)
+            if (arr[j] > arr[j + 1])
+                std::swap(arr[j], arr[j + 1]);
+}
+
+template <typename T>
+void ArrayList<T>::SelectionSort()
+{
+    for (int i = 0; i < this->size - 1; i++)
+    {
+        T cmpData = arr[i];
+        int x = i;
+        for (int j = i + 1; j < this->size; j++)
+            if (cmpData > arr[j]) {
+                cmpData = arr[j];
+                x = j;
+            }
+        std::swap(arr[i], arr[x]);
     }
 }

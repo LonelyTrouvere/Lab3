@@ -252,7 +252,7 @@ bool Figure::Diamond()
         c = Distance(points[2], points[3]),
         d = Distance(points[3], points[0]);
 
-    if (a == b == c == d)
+    if (a == b && b == c  && c == d)
         return true;
 
     return false;
