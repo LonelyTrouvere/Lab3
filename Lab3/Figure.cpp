@@ -109,37 +109,69 @@ bool Figure::isRegular() {
 
 Figure::ETriangleSideType Figure::TriangleSideType()
 {
-    if (this->isRegular()) return Figure::ETriangleSideType::EQUILATERAL;
-    else
-        if (this->IsoscelesTriangle()) return Figure::ETriangleSideType::ISOSCELES;
+    try {
+        if (points.Size() != 3) throw - 1;
+        if (this->isRegular()) return Figure::ETriangleSideType::EQUILATERAL;
         else
-            return Figure::ETriangleSideType::ORDINARY;
+            if (this->IsoscelesTriangle()) return Figure::ETriangleSideType::ISOSCELES;
+            else
+                return Figure::ETriangleSideType::ORDINARY;
+    }
+    catch (int a)
+    {
+        std::cerr << "Polygon is not a triangle!\n";
+        return Figure::NOTATRIANGLE;
+    }
 }
 
 Figure::ETriangleAngleType Figure::TriangleAngleType()
 {
-    if (this->ObtuseAngular()) Figure::ETriangleAngleType::OBTUSE;
-    else
-        if (this->RectangularTriangle()) Figure::ETriangleAngleType::RECTANGULAR;
+    try {
+        if (points.Size() != 3) throw - 1;
+        if (this->ObtuseAngular()) Figure::ETriangleAngleType::OBTUSE;
         else
-            return Figure::ETriangleAngleType::ACUTE;
+            if (this->RectangularTriangle()) Figure::ETriangleAngleType::RECTANGULAR;
+            else
+                return Figure::ETriangleAngleType::ACUTE;
+    }
+    catch (int a)
+    {
+        std::cerr << "Polygon is not a triangle!\n";
+        return Figure::NOTATRIANGLE2;
+    }
 }
 
 Figure::EQuadrangleType Figure::QuadrangleType()
 {
-    if (this->Square()) return Figure::EQuadrangleType::SQUARE;
-    if (this->Diamond()) return Figure::EQuadrangleType::DIAMOND;
-    if (this->Rectangle()) return Figure::EQuadrangleType::RECTANGLE;
-    if (this->Parallelogram()) return Figure::EQuadrangleType::PARALLELOGRAM;
-    if (this->Trapeze()) return Figure::EQuadrangleType::TRAPEZE;
-    return Figure::EQuadrangleType::ARBITARY;
+    try {
+        if (points.Size() != 4) throw - 1;
+        if (this->Square()) return Figure::EQuadrangleType::SQUARE;
+        if (this->Diamond()) return Figure::EQuadrangleType::DIAMOND;
+        if (this->Rectangle()) return Figure::EQuadrangleType::RECTANGLE;
+        if (this->Parallelogram()) return Figure::EQuadrangleType::PARALLELOGRAM;
+        if (this->Trapeze()) return Figure::EQuadrangleType::TRAPEZE;
+        return Figure::EQuadrangleType::ARBITARY;
+    }
+    catch (int a)
+    {
+        std::cerr <<"Polygon is not a quadrangle!\n";
+        return Figure::NOTAQUADRANGLE;
+    }
 }
 
 Figure::ETrapezeType Figure::TrapezeType()
 {
-    if (this->IsoscelesTrapeze()) return Figure::ETrapezeType::ISOSCELEST;
-    if (this->RectengularTrapeze()) return Figure::ETrapezeType::RECTANGULART;
-    return Figure::ETrapezeType::ARBITARYT;
+    try {
+        if (!this->Trapeze()) throw - 1;
+        if (this->IsoscelesTrapeze()) return Figure::ETrapezeType::ISOSCELEST;
+        if (this->RectengularTrapeze()) return Figure::ETrapezeType::RECTANGULART;
+        return Figure::ETrapezeType::ARBITARYT;
+    }
+    catch (int a)
+    {
+        std::cerr << "Polygon is not a trapeze!";
+        return Figure::NOTATRAPEZE;
+    }
 }
 
 //Перевірка трикутника на рівнобедренність
@@ -264,7 +296,7 @@ bool Figure::IsoscelesTrapeze()
         c = Distance(points[2], points[3]),
         d = Distance(points[3], points[0]);
 
-    if (this->Trapeze() && (a == c || b == d))
+    if (a == c || b == d)
         return true;
 
     return false;
@@ -277,7 +309,7 @@ bool Figure::RectengularTrapeze()
         phi2 = Angle(points[1], points[2], points[3]),
         phi3 = Angle(points[2], points[3], points[0]);
 
-    if (this->Trapeze() && (phi1 == M_PI / 2 || phi2 == M_PI / 2 || phi3 == M_PI / 2))
+    if (phi1 == M_PI / 2 || phi2 == M_PI / 2 || phi3 == M_PI / 2)
         return true;
 
     return false;

@@ -8,11 +8,11 @@ int main()
 
 	Figure f;
 
-	f.Add(1, 1);
-	f.Add(0, 1);
 	f.Add(0, 0);
-	f.Add(1, 0);
+	f.Add(2,2);
+	f.Add(7, 2);
+	f.Add(7, 0);
 
-	std::cout << f.QuadrangleType();
+	std::cout << f.TrapezeType();
 }
 

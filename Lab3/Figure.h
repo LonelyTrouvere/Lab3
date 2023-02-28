@@ -19,13 +19,15 @@ public:
 	enum ETriangleSideType {
 		ORDINARY,
 		ISOSCELES,
-		EQUILATERAL
+		EQUILATERAL,
+		NOTATRIANGLE
 	};
 
 	enum ETriangleAngleType {
 		ACUTE,
 		OBTUSE,
-		RECTANGULAR
+		RECTANGULAR,
+		NOTATRIANGLE2
 	};
 
 	enum EQuadrangleType {
@@ -34,13 +36,15 @@ public:
 		RECTANGLE,
 		PARALLELOGRAM,
 		TRAPEZE, 
-		ARBITARY
+		ARBITARY,
+		NOTAQUADRANGLE
 	};
 
 	enum ETrapezeType {
 		ARBITARYT,
 		ISOSCELEST,
-		RECTANGULART
+		RECTANGULART,
+		NOTATRAPEZE
 	};
 
 	std::pair<double, double>& operator[](int i);
