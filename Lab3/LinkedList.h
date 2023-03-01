@@ -97,7 +97,6 @@ public:
     void BubbleSort() override;
     void SelectionSort() override;
     void MergeSort() override;
-    void QuickSort() override;
 };
 
 template <typename T>
@@ -277,11 +276,5 @@ void LinkedList<T>::SelectionSort()
 template <typename T>
 void LinkedList<T>::MergeSort()
 {
-    head = this->ActualMergeSort(head);
-}
-
-template <typename T>
-void LinkedList<T>::QuickSort()
-{
-    int a;
+    this->ActualMergeSort(head);
 }

@@ -11,8 +11,8 @@ private:
     void Append();
     void ActualMergeSort(int l, int r);
     void Merger(int l, int mid, int r);
-    void ActualQuickSort(T* arr_s, int begin, int end);
-    int Partition(T* arr_s, int begin, int end);
+    void ActualQuickSort(int begin, int end);
+    int Partition(int begin, int end);
 public:
     ArrayList();
     T& operator[](int i) override;
@@ -26,7 +26,7 @@ public:
     void BubbleSort() override;
     void SelectionSort() override;
     void MergeSort() override;
-    void QuickSort() override;
+    void QuickSort();
 };
 
 template<typename T>
@@ -170,39 +170,41 @@ void ArrayList<T>::ActualMergeSort(int l, int r)
 template <typename T>
 void ArrayList<T>::Merger(int l, int mid, int r)
 {
-    int _leftS = mid - l + 1, _rightS = r - mid;
-    T* leftSub = new T [_leftS], *rightSub = new T[_rightS];
-    
-    for (int i = 0; i < _leftS; i++)
-        leftSub[i] = arr[l + 1];
-    for (int i = 0; i < _rightS; i++)
-        rightSub[i] = arr[mid + i];
+    int _leftS = mid - l + 1;
+    int _rightS = r - mid;
 
-    int i = 0, j = 0, k = l;
-    while (i < _leftS && j < _rightS)
-    {
-        if (leftSub[i] < rightSub[i])
-        {
+    T* leftSub = new T[_leftS];
+    T* rightSub = new T[_rightS];
+
+    for (int i = 0; i < _leftS; i++)
+        leftSub[i] = arr[l + i];
+    for (int j = 0; j < _rightS; j++)
+        rightSub[j] = arr[mid + 1 + j];
+
+    int i, j, k;
+    i = 0;
+    j = 0;
+    k = l;
+
+    while (i < _leftS && j < _rightS) {
+        if (leftSub[i] <= rightSub[j]) {
             arr[k] = leftSub[i];
             i++;
         }
-        else
-        {
+        else {
             arr[k] = rightSub[j];
             j++;
         }
         k++;
     }
 
-    while (i < _leftS)
-    {
+    while (i < _leftS) {
         arr[k] = leftSub[i];
         i++;
         k++;
     }
 
-    while (j < _rightS)
-    {
+    while (j < _rightS) {
         arr[k] = rightSub[j];
         j++;
         k++;
@@ -212,28 +214,28 @@ void ArrayList<T>::Merger(int l, int mid, int r)
 template <typename T>
 void ArrayList<T>::QuickSort()
 {
-    this->ActualQuickSort(this->arr, 0, this->size - 1);
+    this->ActualQuickSort(0, this->size - 1);
 }
 
 template <typename T>
-void ArrayList<T>::ActualQuickSort(T* arr_s, int begin, int end)
+void ArrayList<T>::ActualQuickSort(int begin, int end)
 {
     if (begin >= end) return;
 
-    int pivot = Partition(arr_s, begin, end);
-    ActualQuickSort(arr_s, begin, pivot - 1);
-    ActualQuickSort(arr_s, pivot + 1, end);
+    int pivot = Partition( begin, end);
+    ActualQuickSort(begin, pivot - 1);
+    ActualQuickSort(pivot + 1, end);
 }
 
 template <typename T>
-int ArrayList<T>::Partition(T* arr_s, int begin, int end)
+int ArrayList<T>::Partition(int begin, int end)
 {
-    T pivot = arr_s[end];
+    T pivot = arr[end];
     int i = begin - 1;
 
     for (int j = begin; j < end; j++)
     {
-        if (arr_s[j] < pivot)
+        if (arr[j] < pivot)
         {
             i++;
             std::swap(arr[i], arr[j]);
