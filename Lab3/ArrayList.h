@@ -11,6 +11,8 @@ private:
     void Append();
     void ActualMergeSort(int l, int r);
     void Merger(int l, int mid, int r);
+    void ActualQuickSort(T* arr_s, int begin, int end);
+    int Partition(T* arr_s, int begin, int end);
 public:
     ArrayList();
     T& operator[](int i) override;
@@ -24,6 +26,7 @@ public:
     void BubbleSort() override;
     void SelectionSort() override;
     void MergeSort() override;
+    void QuickSort() override;
 };
 
 template<typename T>
@@ -204,4 +207,39 @@ void ArrayList<T>::Merger(int l, int mid, int r)
         j++;
         k++;
     }
+}
+
+template <typename T>
+void ArrayList<T>::QuickSort()
+{
+    this->ActualQuickSort(this->arr, 0, this->size - 1);
+}
+
+template <typename T>
+void ArrayList<T>::ActualQuickSort(T* arr_s, int begin, int end)
+{
+    if (begin >= end) return;
+
+    int pivot = Partition(arr_s, begin, end);
+    ActualQuickSort(arr_s, begin, pivot - 1);
+    ActualQuickSort(arr_s, pivot + 1, end);
+}
+
+template <typename T>
+int ArrayList<T>::Partition(T* arr_s, int begin, int end)
+{
+    T pivot = arr_s[end];
+    int i = begin - 1;
+
+    for (int j = begin; j < end; j++)
+    {
+        if (arr_s[j] < pivot)
+        {
+            i++;
+            std::swap(arr[i], arr[j]);
+        }
+    }
+
+    std::swap(arr[++i], arr[end]);
+    return i;
 }
