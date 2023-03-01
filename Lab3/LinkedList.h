@@ -276,5 +276,5 @@ void LinkedList<T>::SelectionSort()
 template <typename T>
 void LinkedList<T>::MergeSort()
 {
-    this->ActualMergeSort(head);
+    head = this->ActualMergeSort(head);
 }
