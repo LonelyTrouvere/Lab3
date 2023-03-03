@@ -1,30 +1,20 @@
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include <iostream>
 #include "LinkedList.h"
 #include "ArrayList.h"
 #include "Figure.h"
+#include <cstdlib>
+#include "doctest.h"
 
-int main()
-{
 
-	LinkedList<double> list;
-	double a[] = { 5.1, 4.9, 4.7, 4.6, 5.0, 5.4, 4.6, 5.0, 4.4, 4.9, 5.4, 4.8, 4.8, 4.3, 5.8, 5.7, 5.4, 5.1, 5.7, 5.1};
+int fact(int n) {
+    return n <= 1 ? n : fact(n - 1) * n;
+}
 
-	for (int i = 0; i < 20; i++)
-		list.Push_back(a[i]);
-
-	list.QuickSort();
-
-	int i = 0;
-	for ( i = 0; i < list.Size(); i++)
-		std::cout << list[i] << ' ';
-
-	for (int i = 0; i < list.Size()-1; i++)
-	{
-		if (list[i] > list[i + 1])
-		{
-			std::cout << "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-			break;
-		}
-	}
+TEST_CASE("testing the factorial function") {
+    CHECK(fact(0) == 1); // will fail
+    CHECK(fact(1) == 1);
+    CHECK(fact(2) == 2);
+    CHECK(fact(10) == 3628800);
 }
 
