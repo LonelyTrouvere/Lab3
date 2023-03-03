@@ -26,7 +26,7 @@ public:
     void BubbleSort() override;
     void SelectionSort() override;
     void MergeSort() override;
-    void QuickSort();
+    void QuickSort() override;
 };
 
 template<typename T>
