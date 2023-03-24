@@ -33,9 +33,6 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="Figure.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="doctest.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

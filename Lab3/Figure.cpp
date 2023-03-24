@@ -22,7 +22,7 @@ void Figure::Add(std::pair<double, double> point)
 	points.Push_back(point); 
 }
 
-void Figure::Add(int x, int y)
+void Figure::Add(double x, double y)
 {
 	points.Push_back({ x, y });
 }

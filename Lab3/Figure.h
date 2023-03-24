@@ -49,7 +49,7 @@ public:
 
 	std::pair<double, double>& operator[](int i);
 	void Add(std::pair<double, double> point);
-	void Add(int x, int y);
+	void Add(double x, double y);
 	int Count();
 
 	static double Distance(std::pair<double, double> p1, std::pair<double, double> p2);
