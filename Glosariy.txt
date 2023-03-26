@@ -58,5 +58,8 @@
   9) TriangleAngleType() - повертає значення типу ETriangleAngleType, яке відповідє виду трикутника за кутами
   10) QuadrangleType() - повертає значення типу EQuadrangleType, яке відповідє виду чотирикутника
   11) TrapezeType() - повертає значення типу ETrapezeType, яке відповідє виду трапеції
+  Статичні методи класу
+  1) Distance(std::pair<double, double> p1, std::pair<double, double> p2) - повертає відстань між двома точками
+  2) Angle(std::pair<double, double> p1, std::pair<double, double> p2, std::pair<double, double> p3) - повертає значення кута в точці p2
   
   
