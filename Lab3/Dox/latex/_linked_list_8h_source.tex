@@ -1,0 +1,368 @@
+\hypertarget{_linked_list_8h_source}{}\doxysection{Linked\+List.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}List.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_linked_list}{LinkedList}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_list}{List}}<T>}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{class\ }Node\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ T\ data;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ Node*\ next;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ Node()}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>next\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ Node(T\ data,\ Node*\ ptr\ =\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>data\ =\ data;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>next\ =\ ptr;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00026\ \ \ \ \ \};}
+\DoxyCodeLine{00027\ \ \ \ \ Node*\ head;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ Node*\ ActualMergeSort(Node*\ first)}
+\DoxyCodeLine{00030\ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (first\ ==\ \textcolor{keyword}{nullptr}\ ||\ first-\/>next\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ first;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ Node*\ mid\ =\ Middle(first);}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ Node*r\ =\ mid-\/>next;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ mid-\/>next\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ first\ =\ ActualMergeSort(first);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ r\ =\ ActualMergeSort(r);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Merger(first,\ r);}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ Node*\ Middle(Node*\ nd)}
+\DoxyCodeLine{00042\ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ Node*\ fast\ =\ nd-\/>next;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ Node*\ slow\ =\ nd;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (fast!=\textcolor{keyword}{nullptr}\ \&\&\ fast-\/>next!=\textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ slow\ =\ slow-\/>next;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ fast\ =\ fast-\/>next-\/>next;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ slow;}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \ \ Node*\ Merger(Node*\ l,\ Node*\ r)}
+\DoxyCodeLine{00054\ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ Node*\ sorted\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ Node*\ tail\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (l-\/>data\ <\ r-\/>data)}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ sorted\ =\ l;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ l\ =\ l-\/>next;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ sorted\ =\ r;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ r\ =\ r-\/>next;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ tail\ =\ sorted;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (l\ !=\ \textcolor{keyword}{nullptr}\ \&\&\ r\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (l-\/>data\ <=\ r-\/>data)\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tail-\/>next\ =\ l;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ l\ =\ l-\/>next;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tail-\/>next\ =\ r;}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r\ =\ r-\/>next;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ tail\ =\ tail-\/>next;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (l\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ tail-\/>next\ =\ l;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (r\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ tail-\/>next\ =\ r;}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sorted;}
+\DoxyCodeLine{00090\ \ \ \ \ \}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ Node*\ getTail(Node*\ cur)}
+\DoxyCodeLine{00093\ \ \ \ \ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (cur\ !=\ NULL\ \&\&\ cur-\/>next\ !=\ NULL)}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ cur\ =\ cur-\/>next;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ cur;}
+\DoxyCodeLine{00097\ \ \ \ \ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ Node*\ partition(\ Node*\ head,\ \ Node*\ end,\ Node**\ newHead,\ Node**\ newEnd)}
+\DoxyCodeLine{00100\ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ Node*\ pivot\ =\ end;}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ Node*\ prev\ =\ NULL,\ *\ cur\ =\ head,\ *\ tail\ =\ pivot;}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (cur\ !=\ pivot)\ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cur-\/>data\ <\ pivot-\/>data)\ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((*newHead)\ ==\ NULL)}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (*newHead)\ =\ cur;}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ prev\ =\ cur;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cur\ =\ cur-\/>next;}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (prev)}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ prev-\/>next\ =\ cur-\/>next;}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Node*\ tmp\ =\ cur-\/>next;}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cur-\/>next\ =\ NULL;}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tail-\/>next\ =\ cur;}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tail\ =\ cur;}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cur\ =\ tmp;}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((*newHead)\ ==\ NULL)}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ (*newHead)\ =\ pivot;}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ (*newEnd)\ =\ tail;}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ pivot;}
+\DoxyCodeLine{00131\ \ \ \ \ \}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \ Node*\ quickSortRecur(\ Node*\ head,\ Node*\ end)}
+\DoxyCodeLine{00134\ \ \ \ \ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!head\ ||\ head\ ==\ end)}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ head;}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ Node*\ newHead\ =\ NULL,\ *\ newEnd\ =\ NULL;}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ Node*\ pivot\ =\ partition(head,\ end,\ \&newHead,\ \&newEnd);}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (newHead\ !=\ pivot)\ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ Node*\ tmp\ =\ newHead;}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (tmp-\/>next\ !=\ pivot)}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmp\ =\ tmp-\/>next;}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ tmp-\/>next\ =\ NULL;}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ newHead\ =\ quickSortRecur(newHead,\ tmp);}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ tmp\ =\ getTail(newHead);}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ tmp-\/>next\ =\ pivot;}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ pivot-\/>next\ =\ quickSortRecur(pivot-\/>next,\ newEnd);}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ newHead;}
+\DoxyCodeLine{00156\ \ \ \ \ \}}
+\DoxyCodeLine{00157\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00158\ \ \ \ \ \mbox{\hyperlink{class_linked_list}{LinkedList}}();}
+\DoxyCodeLine{00166\ \ \ \ \ T\&\ \mbox{\hyperlink{class_linked_list_a6e0c11596346e9ba5e7566ac60c9fa0e}{operator[]}}(\textcolor{keywordtype}{int}\ i)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_linked_list_ae23a0d8088de0ae2a7aea3d445ac5622}{Push\_back}}(T\ data)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_linked_list_a3a9a8a54f4a100b15264dfaa81e5c76d}{Pop\_back}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_linked_list_a6ee629f60f7e864b3a6b1ed84738bcd8}{Set}}(T\ data,\ \textcolor{keywordtype}{int}\ i);}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_linked_list_a2f2053fb84d5f57b2e8f3f1824252ec9}{Clear}}()\textcolor{keyword}{override};}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00203\ \ \ \ \ T\ \mbox{\hyperlink{class_linked_list_aa5c8b190db84e470c42a63479b56cbe1}{Peek}}()\textcolor{keyword}{override};}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_linked_list_a887809143be064488531c46de8621dfd}{InsertionSort}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_linked_list_aed87d390f74ad22b1dcd833c6624953d}{BubbleSort}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_linked_list_a06ff027f3ecd7d33fe6c2c6c89cce808}{SelectionSort}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00227\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_linked_list_a2678db889a829226be5ef0df3d85ebcc}{MergeSort}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_linked_list_ad5e1b8bfd1b6d4bda20802701d687c54}{QuickSort}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00234\ \};}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00237\ \mbox{\hyperlink{class_linked_list}{LinkedList<T>::LinkedList}}()\ \{}
+\DoxyCodeLine{00238\ \ \ \ \ head\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00239\ \ \ \ \ this-\/>size\ =\ 0;}
+\DoxyCodeLine{00240\ \}}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00243\ T\&\ \mbox{\hyperlink{class_linked_list_a6e0c11596346e9ba5e7566ac60c9fa0e}{LinkedList<T>::operator[]}}(\textcolor{keywordtype}{int}\ i)\ \{}
+\DoxyCodeLine{00244\ \ \ \ \ Node*\ temp\ =\ head;}
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keywordtype}{int}\ j\ =\ 0;}
+\DoxyCodeLine{00246\ \ \ \ \ \textcolor{keywordflow}{while}\ (temp!=\textcolor{keyword}{nullptr}\ \&\&\ j\ !=\ i)}
+\DoxyCodeLine{00247\ \ \ \ \ \{}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ j++;}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ temp\ =\ temp-\/>next;}
+\DoxyCodeLine{00250\ \ \ \ \ \}}
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00252\ \ \ \ \ \textcolor{keywordflow}{if}\ (temp)}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ temp-\/>data;}
+\DoxyCodeLine{00254\ \}}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00257\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00258\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_linked_list}{LinkedList<T>::Push\_back}}(T\ data)\ \{}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00260\ \ \ \ \ Node*\ newNode\ =\ \textcolor{keyword}{new}\ Node(data);}
+\DoxyCodeLine{00261\ \ \ \ \ \textcolor{keywordflow}{if}\ (!head)}
+\DoxyCodeLine{00262\ \ \ \ \ \{}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ head\ =\ newNode;}
+\DoxyCodeLine{00264\ \ \ \ \ \}}
+\DoxyCodeLine{00265\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00266\ \ \ \ \ \{}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ Node*\ cur\ =\ head;}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (cur-\/>next)}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ cur\ =\ cur-\/>next;}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ cur-\/>next\ =\ newNode;}
+\DoxyCodeLine{00273\ \ \ \ \ \}}
+\DoxyCodeLine{00274\ \ \ \ \ this-\/>size++;}
+\DoxyCodeLine{00275\ \};}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00277\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00278\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_linked_list_a3a9a8a54f4a100b15264dfaa81e5c76d}{LinkedList<T>::Pop\_back}}()}
+\DoxyCodeLine{00279\ \{}
+\DoxyCodeLine{00280\ \ \ \ \ \textcolor{keywordflow}{if}\ (!head)}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00282\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>size\ ==\ 1)}
+\DoxyCodeLine{00283\ \ \ \ \ \{}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ head;}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ head\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00286\ \ \ \ \ \}}
+\DoxyCodeLine{00287\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ Node*\ prev\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ Node*\ curr\ =\ head;}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (curr-\/>next)\ \{}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ prev\ =\ curr;}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ curr\ =\ curr-\/>next;}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ prev-\/>next\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ curr;}
+\DoxyCodeLine{00296\ \ \ \ \ \}}
+\DoxyCodeLine{00297\ \ \ \ \ this-\/>size-\/-\/;}
+\DoxyCodeLine{00298\ \}}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00300\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00301\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_linked_list_a2f2053fb84d5f57b2e8f3f1824252ec9}{LinkedList<T>::Clear}}()\ \{}
+\DoxyCodeLine{00302\ \ \ \ \ \textcolor{keywordflow}{while}\ (head)}
+\DoxyCodeLine{00303\ \ \ \ \ \{}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ Node*\ temp\ =\ head;}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ head\ =\ head-\/>next;}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ temp;}
+\DoxyCodeLine{00307\ \ \ \ \ \}}
+\DoxyCodeLine{00308\ \ \ \ \ this-\/>size\ =\ 0;}
+\DoxyCodeLine{00309\ \}}
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00311\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00312\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_linked_list_a6ee629f60f7e864b3a6b1ed84738bcd8}{LinkedList<T>::Set}}(T\ data,\ \textcolor{keywordtype}{int}\ i)\ \{}
+\DoxyCodeLine{00313\ \ \ \ \ \textcolor{keywordflow}{if}\ (!head\ ||\ i\ >\ this-\/>size)}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00315\ \ \ \ \ i-\/-\/;}
+\DoxyCodeLine{00316\ \ \ \ \ Node*\ cur\ =\ head;}
+\DoxyCodeLine{00317\ \ \ \ \ \textcolor{keywordflow}{while}\ (i-\/-\/)}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ cur\ =\ cur-\/>next;}
+\DoxyCodeLine{00319\ \ \ \ \ cur-\/>data\ =\ data;}
+\DoxyCodeLine{00320\ \}}
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00322\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00323\ T\ \mbox{\hyperlink{class_linked_list_aa5c8b190db84e470c42a63479b56cbe1}{LinkedList<T>::Peek}}()}
+\DoxyCodeLine{00324\ \{}
+\DoxyCodeLine{00325\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (head\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ error\ =\ \textcolor{stringliteral}{"{}List\ is\ empty"{}};}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ (error);}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ head-\/>data;}
+\DoxyCodeLine{00332\ \ \ \ \ \}}
+\DoxyCodeLine{00333\ \ \ \ \ \textcolor{keywordflow}{catch}\ (std::string\ message)}
+\DoxyCodeLine{00334\ \ \ \ \ \{}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ std::cout\ <<\ message\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00336\ \ \ \ \ \}}
+\DoxyCodeLine{00337\ \}}
+\DoxyCodeLine{00338\ }
+\DoxyCodeLine{00339\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00340\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_linked_list_a887809143be064488531c46de8621dfd}{LinkedList<T>::InsertionSort}}()}
+\DoxyCodeLine{00341\ \{}
+\DoxyCodeLine{00342\ \ \ \ \ Node*\ sorted\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00343\ \ \ \ \ Node*\ temp\ =\ head;}
+\DoxyCodeLine{00344\ \ \ \ \ \textcolor{keywordflow}{while}\ (temp)}
+\DoxyCodeLine{00345\ \ \ \ \ \{}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ Node*\ curr\ =\ \textcolor{keyword}{new}\ Node();}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ curr-\/>data\ =\ temp-\/>data;}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ curr-\/>next\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sorted\ ==\ \textcolor{keyword}{nullptr}\ ||\ sorted-\/>data\ >=\ curr-\/>data)\ \{}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ curr-\/>next\ =\ sorted;}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ sorted\ =\ curr;}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ Node*\ current\ =\ sorted;}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (current-\/>next\ !=\ \textcolor{keyword}{nullptr}}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&\&\ current-\/>next-\/>data\ <\ curr-\/>data)\ \{}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ current\ =\ current-\/>next;}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ curr-\/>next\ =\ current-\/>next;}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \ \ \ \ current-\/>next\ =\ curr;}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ temp\ =\ temp-\/>next;}
+\DoxyCodeLine{00363\ \ \ \ \ \}}
+\DoxyCodeLine{00364\ \ \ \ \ head\ =\ sorted;}
+\DoxyCodeLine{00365\ \}}
+\DoxyCodeLine{00366\ }
+\DoxyCodeLine{00367\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00368\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_linked_list_aed87d390f74ad22b1dcd833c6624953d}{LinkedList<T>::BubbleSort}}()}
+\DoxyCodeLine{00369\ \{}
+\DoxyCodeLine{00370\ \ \ \ \ Node*\ curr\ =\ head;}
+\DoxyCodeLine{00371\ \ \ \ \ Node*\ end\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00372\ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 1;}
+\DoxyCodeLine{00373\ }
+\DoxyCodeLine{00374\ \ \ \ \ \textcolor{keywordflow}{while}\ (end\ !=\ head)}
+\DoxyCodeLine{00375\ \ \ \ \ \{}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (curr-\/>next\ !=\ end)}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (curr-\/>data\ >\ curr-\/>next-\/>data)}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::swap(curr-\/>data,\ curr-\/>next-\/>data);}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \ \ \ \ curr\ =\ curr-\/>next;}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ end\ =\ curr;}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ curr\ =\ head;}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ i\ =\ 1;}
+\DoxyCodeLine{00386\ \ \ \ \ \}}
+\DoxyCodeLine{00387\ \ \ \ \ head\ =\ end;}
+\DoxyCodeLine{00388\ \}}
+\DoxyCodeLine{00389\ }
+\DoxyCodeLine{00390\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00391\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_linked_list_a06ff027f3ecd7d33fe6c2c6c89cce808}{LinkedList<T>::SelectionSort}}()}
+\DoxyCodeLine{00392\ \{}
+\DoxyCodeLine{00393\ \ \ \ \ Node*\ temp\ =\ head;}
+\DoxyCodeLine{00394\ \ \ \ \ \textcolor{keywordflow}{while}\ (temp)}
+\DoxyCodeLine{00395\ \ \ \ \ \{}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ Node*\ minimal\ =\ temp;}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ Node*\ curr\ =\ temp-\/>next;}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (curr)}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (minimal-\/>data\ >\ curr-\/>data)}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ minimal\ =\ curr;}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \ \ \ \ curr\ =\ curr-\/>next;}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ std::swap(temp-\/>data,\ minimal-\/>data);}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ temp\ =\ temp-\/>next;}
+\DoxyCodeLine{00406\ \ \ \ \ \}}
+\DoxyCodeLine{00407\ }
+\DoxyCodeLine{00408\ \}}
+\DoxyCodeLine{00409\ }
+\DoxyCodeLine{00410\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00411\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_linked_list_a2678db889a829226be5ef0df3d85ebcc}{LinkedList<T>::MergeSort}}()}
+\DoxyCodeLine{00412\ \{}
+\DoxyCodeLine{00413\ \ \ \ \ head\ =\ this-\/>ActualMergeSort(head);}
+\DoxyCodeLine{00414\ \}}
+\DoxyCodeLine{00415\ }
+\DoxyCodeLine{00416\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00417\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_linked_list_ad5e1b8bfd1b6d4bda20802701d687c54}{LinkedList<T>::QuickSort}}()}
+\DoxyCodeLine{00418\ \{}
+\DoxyCodeLine{00419\ \ \ \ \ head\ =\ this-\/>quickSortRecur(head,\ getTail(head));}
+\DoxyCodeLine{00420\ \}}
+
+\end{DoxyCode}

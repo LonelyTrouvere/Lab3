@@ -1,0 +1,276 @@
+\hypertarget{class_array_list}{}\doxysection{Array\+List\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\label{class_array_list}\index{ArrayList$<$ T $>$@{ArrayList$<$ T $>$}}
+
+
+Represents an Array list container.  
+
+
+
+
+{\ttfamily \#include $<$Array\+List.\+h$>$}
+
+Inheritance diagram for Array\+List\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_array_list}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+T \& \mbox{\hyperlink{class_array_list_a153b97d26ca72a824cf536bb5c495199}{operator\mbox{[}$\,$\mbox{]}}} (int i) override
+\begin{DoxyCompactList}\small\item\em Overloads the \mbox{[}\mbox{]} operator to access elements of the list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_array_list_ace42b8c894f3ef3c7665ebaafae05591}{Push\+\_\+back}} (T data) override
+\begin{DoxyCompactList}\small\item\em Adds a new element to the end of the container. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_array_list_a93066225593b6837a22a50d74c835397}{Pop\+\_\+back}} () override
+\begin{DoxyCompactList}\small\item\em Removes the last element from the container. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_array_list_ab60dc942bd30e082a609e21b41186a0b}{Clear}} () override
+\begin{DoxyCompactList}\small\item\em Removes all elements from the container. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{class_array_list_a8b078b0660ac85fed40a5c437353c8b7}{Peek}} () override
+\begin{DoxyCompactList}\small\item\em Returns the last element of the container. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_array_list_a43f46241081a4fa9d235212a3cb5ae36}{Insertion\+Sort}} () override
+\begin{DoxyCompactList}\small\item\em Sorts the elements of the container using the insertion sort algorithm. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_array_list_a6d5710fdfbba1b64685574129376527a}{Bubble\+Sort}} () override
+\begin{DoxyCompactList}\small\item\em Sorts the elements of the container using the bubble sort algorithm. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_array_list_a27c883eb7db82b6e3d4f6bba3806c234}{Selection\+Sort}} () override
+\begin{DoxyCompactList}\small\item\em Sorts the elements of the container using the selection sort algorithm. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_array_list_a5002c9a47ea3eed7b3bdb79d0eab8b03}{Merge\+Sort}} () override
+\begin{DoxyCompactList}\small\item\em Sorts the elements of the container using the merge sort algorithm. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_array_list_ab465f9cc27aa70996373cb95ec9b5c03}{Quick\+Sort}} () override
+\begin{DoxyCompactList}\small\item\em Sorts the elements of the container using the quick sort algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_list}{List$<$ T $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_list_a682b1bb417bc01b772118c557bb947d3}\label{class_list_a682b1bb417bc01b772118c557bb947d3}} 
+virtual int {\bfseries Size} ()
+\item 
+\mbox{\Hypertarget{class_list_a85eade363d51ece5c6b9546c81e80dd5}\label{class_list_a85eade363d51ece5c6b9546c81e80dd5}} 
+virtual void {\bfseries Push\+\_\+back} ()=0
+\item 
+\mbox{\Hypertarget{class_list_a44325ece715192a0c9831c128fb1f518}\label{class_list_a44325ece715192a0c9831c128fb1f518}} 
+virtual void {\bfseries Pop\+\_\+\+Back} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_list_aac08edd910037ae06f62f72c0ffb5e1d}{Clear}} ()=0
+\item 
+\mbox{\Hypertarget{class_list_a34859c8501a41a8931d2948b61ebbcf0}\label{class_list_a34859c8501a41a8931d2948b61ebbcf0}} 
+virtual void {\bfseries Set} (int pos, T data)=0
+\item 
+\mbox{\Hypertarget{class_list_a83a914fd775ad4749919706842732eb9}\label{class_list_a83a914fd775ad4749919706842732eb9}} 
+virtual void {\bfseries Print} ()
+\item 
+\mbox{\Hypertarget{class_list_abc7957751426ef94973e3e55717b2e16}\label{class_list_abc7957751426ef94973e3e55717b2e16}} 
+virtual bool {\bfseries Empty} ()
+\item 
+virtual int \mbox{\hyperlink{class_list_a682b1bb417bc01b772118c557bb947d3}{Size}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current size of the \mbox{\hyperlink{class_list}{List}}. \end{DoxyCompactList}\item 
+virtual T \& \mbox{\hyperlink{class_list_a629545f7e9120dbd89ae5afaf3e276da}{operator\mbox{[}$\,$\mbox{]}}} (int i)=0
+\begin{DoxyCompactList}\small\item\em Gets a reference to an element at a specific index. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_list_a27f2eb8f5ccb150e05924ce66a500e27}{Push\+\_\+back}} (T data)=0
+\begin{DoxyCompactList}\small\item\em Adds an element to the end of the \mbox{\hyperlink{class_list}{List}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_list_aaf83c847b4cc41273922a6f7cd4eb742}{Pop\+\_\+back}} ()=0
+\begin{DoxyCompactList}\small\item\em Removes the last element from the \mbox{\hyperlink{class_list}{List}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_list_aac08edd910037ae06f62f72c0ffb5e1d}{Clear}} ()=0
+\begin{DoxyCompactList}\small\item\em Removes all elements from the \mbox{\hyperlink{class_list}{List}}. \end{DoxyCompactList}\item 
+virtual T \mbox{\hyperlink{class_list_adea83780557db07651ecd5fcf402eafb}{Peek}} ()=0
+\begin{DoxyCompactList}\small\item\em Gets the value of the first element in the \mbox{\hyperlink{class_list}{List}}. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_list_abc7957751426ef94973e3e55717b2e16}{Empty}} ()
+\begin{DoxyCompactList}\small\item\em Determines if the \mbox{\hyperlink{class_list}{List}} is empty. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_list_aa77538d22a5a846c0a21a4eab401d507}{Insertion\+Sort}} ()=0
+\begin{DoxyCompactList}\small\item\em Sorts the \mbox{\hyperlink{class_list}{List}} in ascending order using the insertion sort algorithm. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_list_a003790606a4882de4faf6bdec9620767}{Bubble\+Sort}} ()=0
+\begin{DoxyCompactList}\small\item\em Sorts the \mbox{\hyperlink{class_list}{List}} in ascending order using the bubble sort algorithm. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_list_ad580747764d1b7ce09d527564839746e}{Selection\+Sort}} ()=0
+\begin{DoxyCompactList}\small\item\em Sorts the \mbox{\hyperlink{class_list}{List}} in ascending order using the selection sort algorithm. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_list_adf64d400bbe7205336919feb1a9dee93}{Merge\+Sort}} ()=0
+\begin{DoxyCompactList}\small\item\em Sorts the \mbox{\hyperlink{class_list}{List}} in ascending order using the merge sort algorithm. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_list_a520e5655d5e3d5575d1bbdab1e28343a}{Quick\+Sort}} ()=0
+\begin{DoxyCompactList}\small\item\em Sorts the \mbox{\hyperlink{class_list}{List}} in ascending order using the quick sort algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Array\+List$<$ T $>$}
+Represents an Array list container. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_array_list_a6d5710fdfbba1b64685574129376527a}\label{class_array_list_a6d5710fdfbba1b64685574129376527a}} 
+\index{ArrayList$<$ T $>$@{ArrayList$<$ T $>$}!BubbleSort@{BubbleSort}}
+\index{BubbleSort@{BubbleSort}!ArrayList$<$ T $>$@{ArrayList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{BubbleSort()}{BubbleSort()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_array_list}{Array\+List}}$<$ T $>$\+::\+Bubble\+Sort\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sorts the elements of the container using the bubble sort algorithm. 
+
+
+
+Implements \mbox{\hyperlink{class_list_a003790606a4882de4faf6bdec9620767}{List$<$ T $>$}}.
+
+\mbox{\Hypertarget{class_array_list_ab60dc942bd30e082a609e21b41186a0b}\label{class_array_list_ab60dc942bd30e082a609e21b41186a0b}} 
+\index{ArrayList$<$ T $>$@{ArrayList$<$ T $>$}!Clear@{Clear}}
+\index{Clear@{Clear}!ArrayList$<$ T $>$@{ArrayList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_array_list}{Array\+List}}$<$ T $>$\+::\+Clear\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Removes all elements from the container. 
+
+
+
+Implements \mbox{\hyperlink{class_list}{List$<$ T $>$}}.
+
+\mbox{\Hypertarget{class_array_list_a43f46241081a4fa9d235212a3cb5ae36}\label{class_array_list_a43f46241081a4fa9d235212a3cb5ae36}} 
+\index{ArrayList$<$ T $>$@{ArrayList$<$ T $>$}!InsertionSort@{InsertionSort}}
+\index{InsertionSort@{InsertionSort}!ArrayList$<$ T $>$@{ArrayList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{InsertionSort()}{InsertionSort()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_array_list}{Array\+List}}$<$ T $>$\+::\+Insertion\+Sort\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sorts the elements of the container using the insertion sort algorithm. 
+
+
+
+Implements \mbox{\hyperlink{class_list_aa77538d22a5a846c0a21a4eab401d507}{List$<$ T $>$}}.
+
+\mbox{\Hypertarget{class_array_list_a5002c9a47ea3eed7b3bdb79d0eab8b03}\label{class_array_list_a5002c9a47ea3eed7b3bdb79d0eab8b03}} 
+\index{ArrayList$<$ T $>$@{ArrayList$<$ T $>$}!MergeSort@{MergeSort}}
+\index{MergeSort@{MergeSort}!ArrayList$<$ T $>$@{ArrayList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{MergeSort()}{MergeSort()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_array_list}{Array\+List}}$<$ T $>$\+::\+Merge\+Sort\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sorts the elements of the container using the merge sort algorithm. 
+
+
+
+Implements \mbox{\hyperlink{class_list_adf64d400bbe7205336919feb1a9dee93}{List$<$ T $>$}}.
+
+\mbox{\Hypertarget{class_array_list_a153b97d26ca72a824cf536bb5c495199}\label{class_array_list_a153b97d26ca72a824cf536bb5c495199}} 
+\index{ArrayList$<$ T $>$@{ArrayList$<$ T $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!ArrayList$<$ T $>$@{ArrayList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \& \mbox{\hyperlink{class_array_list}{Array\+List}}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Overloads the \mbox{[}\mbox{]} operator to access elements of the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Index of the element to be accessed.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the element at the specified index. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_list_a629545f7e9120dbd89ae5afaf3e276da}{List$<$ T $>$}}.
+
+\mbox{\Hypertarget{class_array_list_a8b078b0660ac85fed40a5c437353c8b7}\label{class_array_list_a8b078b0660ac85fed40a5c437353c8b7}} 
+\index{ArrayList$<$ T $>$@{ArrayList$<$ T $>$}!Peek@{Peek}}
+\index{Peek@{Peek}!ArrayList$<$ T $>$@{ArrayList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Peek()}{Peek()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{class_array_list}{Array\+List}}$<$ T $>$\+::\+Peek\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the last element of the container. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the elements in the container. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+The last element of the container. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_list_adea83780557db07651ecd5fcf402eafb}{List$<$ T $>$}}.
+
+\mbox{\Hypertarget{class_array_list_a93066225593b6837a22a50d74c835397}\label{class_array_list_a93066225593b6837a22a50d74c835397}} 
+\index{ArrayList$<$ T $>$@{ArrayList$<$ T $>$}!Pop\_back@{Pop\_back}}
+\index{Pop\_back@{Pop\_back}!ArrayList$<$ T $>$@{ArrayList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Pop\_back()}{Pop\_back()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_array_list}{Array\+List}}$<$ T $>$\+::\+Pop\+\_\+back\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Removes the last element from the container. 
+
+
+
+Implements \mbox{\hyperlink{class_list_aaf83c847b4cc41273922a6f7cd4eb742}{List$<$ T $>$}}.
+
+\mbox{\Hypertarget{class_array_list_ace42b8c894f3ef3c7665ebaafae05591}\label{class_array_list_ace42b8c894f3ef3c7665ebaafae05591}} 
+\index{ArrayList$<$ T $>$@{ArrayList$<$ T $>$}!Push\_back@{Push\_back}}
+\index{Push\_back@{Push\_back}!ArrayList$<$ T $>$@{ArrayList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Push\_back()}{Push\_back()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_array_list}{Array\+List}}$<$ T $>$\+::\+Push\+\_\+back (\begin{DoxyParamCaption}\item[{T}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Adds a new element to the end of the container. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the elements in the container. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The element to be added to the container. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_list_a27f2eb8f5ccb150e05924ce66a500e27}{List$<$ T $>$}}.
+
+\mbox{\Hypertarget{class_array_list_ab465f9cc27aa70996373cb95ec9b5c03}\label{class_array_list_ab465f9cc27aa70996373cb95ec9b5c03}} 
+\index{ArrayList$<$ T $>$@{ArrayList$<$ T $>$}!QuickSort@{QuickSort}}
+\index{QuickSort@{QuickSort}!ArrayList$<$ T $>$@{ArrayList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{QuickSort()}{QuickSort()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_array_list}{Array\+List}}$<$ T $>$\+::\+Quick\+Sort\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sorts the elements of the container using the quick sort algorithm. 
+
+
+
+Implements \mbox{\hyperlink{class_list_a520e5655d5e3d5575d1bbdab1e28343a}{List$<$ T $>$}}.
+
+\mbox{\Hypertarget{class_array_list_a27c883eb7db82b6e3d4f6bba3806c234}\label{class_array_list_a27c883eb7db82b6e3d4f6bba3806c234}} 
+\index{ArrayList$<$ T $>$@{ArrayList$<$ T $>$}!SelectionSort@{SelectionSort}}
+\index{SelectionSort@{SelectionSort}!ArrayList$<$ T $>$@{ArrayList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SelectionSort()}{SelectionSort()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_array_list}{Array\+List}}$<$ T $>$\+::\+Selection\+Sort\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sorts the elements of the container using the selection sort algorithm. 
+
+
+
+Implements \mbox{\hyperlink{class_list_ad580747764d1b7ce09d527564839746e}{List$<$ T $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Array\+List.\+h\end{DoxyCompactItemize}

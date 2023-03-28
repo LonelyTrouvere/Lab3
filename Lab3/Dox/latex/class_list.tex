@@ -1,0 +1,290 @@
+\hypertarget{class_list}{}\doxysection{List\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\label{class_list}\index{List$<$ T $>$@{List$<$ T $>$}}
+
+
+A template class for creating a \mbox{\hyperlink{class_list}{List}} data structure. This class provides the basic functionality of a \mbox{\hyperlink{class_list}{List}} data structure.  
+
+
+
+
+{\ttfamily \#include $<$List.\+h$>$}
+
+Inheritance diagram for List\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.899598cm]{class_list}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_list_a682b1bb417bc01b772118c557bb947d3}\label{class_list_a682b1bb417bc01b772118c557bb947d3}} 
+virtual int {\bfseries Size} ()
+\item 
+\mbox{\Hypertarget{class_list_a85eade363d51ece5c6b9546c81e80dd5}\label{class_list_a85eade363d51ece5c6b9546c81e80dd5}} 
+virtual void {\bfseries Push\+\_\+back} ()=0
+\item 
+\mbox{\Hypertarget{class_list_a44325ece715192a0c9831c128fb1f518}\label{class_list_a44325ece715192a0c9831c128fb1f518}} 
+virtual void {\bfseries Pop\+\_\+\+Back} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_list_aac08edd910037ae06f62f72c0ffb5e1d}{Clear}} ()=0
+\item 
+\mbox{\Hypertarget{class_list_a34859c8501a41a8931d2948b61ebbcf0}\label{class_list_a34859c8501a41a8931d2948b61ebbcf0}} 
+virtual void {\bfseries Set} (int pos, T data)=0
+\item 
+\mbox{\Hypertarget{class_list_a83a914fd775ad4749919706842732eb9}\label{class_list_a83a914fd775ad4749919706842732eb9}} 
+virtual void {\bfseries Print} ()
+\item 
+\mbox{\Hypertarget{class_list_abc7957751426ef94973e3e55717b2e16}\label{class_list_abc7957751426ef94973e3e55717b2e16}} 
+virtual bool {\bfseries Empty} ()
+\item 
+virtual int \mbox{\hyperlink{class_list_a682b1bb417bc01b772118c557bb947d3}{Size}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current size of the \mbox{\hyperlink{class_list}{List}}. \end{DoxyCompactList}\item 
+virtual T \& \mbox{\hyperlink{class_list_a629545f7e9120dbd89ae5afaf3e276da}{operator\mbox{[}$\,$\mbox{]}}} (int i)=0
+\begin{DoxyCompactList}\small\item\em Gets a reference to an element at a specific index. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_list_a27f2eb8f5ccb150e05924ce66a500e27}{Push\+\_\+back}} (T data)=0
+\begin{DoxyCompactList}\small\item\em Adds an element to the end of the \mbox{\hyperlink{class_list}{List}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_list_aaf83c847b4cc41273922a6f7cd4eb742}{Pop\+\_\+back}} ()=0
+\begin{DoxyCompactList}\small\item\em Removes the last element from the \mbox{\hyperlink{class_list}{List}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_list_aac08edd910037ae06f62f72c0ffb5e1d}{Clear}} ()=0
+\begin{DoxyCompactList}\small\item\em Removes all elements from the \mbox{\hyperlink{class_list}{List}}. \end{DoxyCompactList}\item 
+virtual T \mbox{\hyperlink{class_list_adea83780557db07651ecd5fcf402eafb}{Peek}} ()=0
+\begin{DoxyCompactList}\small\item\em Gets the value of the first element in the \mbox{\hyperlink{class_list}{List}}. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_list_abc7957751426ef94973e3e55717b2e16}{Empty}} ()
+\begin{DoxyCompactList}\small\item\em Determines if the \mbox{\hyperlink{class_list}{List}} is empty. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_list_aa77538d22a5a846c0a21a4eab401d507}{Insertion\+Sort}} ()=0
+\begin{DoxyCompactList}\small\item\em Sorts the \mbox{\hyperlink{class_list}{List}} in ascending order using the insertion sort algorithm. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_list_a003790606a4882de4faf6bdec9620767}{Bubble\+Sort}} ()=0
+\begin{DoxyCompactList}\small\item\em Sorts the \mbox{\hyperlink{class_list}{List}} in ascending order using the bubble sort algorithm. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_list_ad580747764d1b7ce09d527564839746e}{Selection\+Sort}} ()=0
+\begin{DoxyCompactList}\small\item\em Sorts the \mbox{\hyperlink{class_list}{List}} in ascending order using the selection sort algorithm. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_list_adf64d400bbe7205336919feb1a9dee93}{Merge\+Sort}} ()=0
+\begin{DoxyCompactList}\small\item\em Sorts the \mbox{\hyperlink{class_list}{List}} in ascending order using the merge sort algorithm. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_list_a520e5655d5e3d5575d1bbdab1e28343a}{Quick\+Sort}} ()=0
+\begin{DoxyCompactList}\small\item\em Sorts the \mbox{\hyperlink{class_list}{List}} in ascending order using the quick sort algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class List$<$ T $>$}
+A template class for creating a \mbox{\hyperlink{class_list}{List}} data structure. This class provides the basic functionality of a \mbox{\hyperlink{class_list}{List}} data structure. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data stored in the \mbox{\hyperlink{class_list}{List}}. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_list_a003790606a4882de4faf6bdec9620767}\label{class_list_a003790606a4882de4faf6bdec9620767}} 
+\index{List$<$ T $>$@{List$<$ T $>$}!BubbleSort@{BubbleSort}}
+\index{BubbleSort@{BubbleSort}!List$<$ T $>$@{List$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{BubbleSort()}{BubbleSort()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual void \mbox{\hyperlink{class_list}{List}}$<$ T $>$\+::\+Bubble\+Sort (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sorts the \mbox{\hyperlink{class_list}{List}} in ascending order using the bubble sort algorithm. 
+
+
+
+Implemented in \mbox{\hyperlink{class_array_list_a6d5710fdfbba1b64685574129376527a}{Array\+List$<$ T $>$}}, \mbox{\hyperlink{class_array_list_a6d5710fdfbba1b64685574129376527a}{Array\+List$<$ int $>$}}, \mbox{\hyperlink{class_array_list_a6d5710fdfbba1b64685574129376527a}{Array\+List$<$ std\+::pair$<$ double, double $>$ $>$}}, \mbox{\hyperlink{class_linked_list_aed87d390f74ad22b1dcd833c6624953d}{Linked\+List$<$ T $>$}}, and \mbox{\hyperlink{class_linked_list_aed87d390f74ad22b1dcd833c6624953d}{Linked\+List$<$ int $>$}}.
+
+\mbox{\Hypertarget{class_list_aac08edd910037ae06f62f72c0ffb5e1d}\label{class_list_aac08edd910037ae06f62f72c0ffb5e1d}} 
+\index{List$<$ T $>$@{List$<$ T $>$}!Clear@{Clear}}
+\index{Clear@{Clear}!List$<$ T $>$@{List$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual void \mbox{\hyperlink{class_list}{List}}$<$ T $>$\+::\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_array_list_ab60dc942bd30e082a609e21b41186a0b}{Array\+List$<$ T $>$}}, \mbox{\hyperlink{class_array_list_ab60dc942bd30e082a609e21b41186a0b}{Array\+List$<$ int $>$}}, \mbox{\hyperlink{class_array_list_ab60dc942bd30e082a609e21b41186a0b}{Array\+List$<$ std\+::pair$<$ double, double $>$ $>$}}, \mbox{\hyperlink{class_linked_list_a2f2053fb84d5f57b2e8f3f1824252ec9}{Linked\+List$<$ T $>$}}, and \mbox{\hyperlink{class_linked_list_a2f2053fb84d5f57b2e8f3f1824252ec9}{Linked\+List$<$ int $>$}}.
+
+\mbox{\Hypertarget{class_list_aac08edd910037ae06f62f72c0ffb5e1d}\label{class_list_aac08edd910037ae06f62f72c0ffb5e1d}} 
+\index{List$<$ T $>$@{List$<$ T $>$}!Clear@{Clear}}
+\index{Clear@{Clear}!List$<$ T $>$@{List$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual void \mbox{\hyperlink{class_list}{List}}$<$ T $>$\+::\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Removes all elements from the \mbox{\hyperlink{class_list}{List}}. 
+
+
+
+Implemented in \mbox{\hyperlink{class_array_list_ab60dc942bd30e082a609e21b41186a0b}{Array\+List$<$ T $>$}}, \mbox{\hyperlink{class_array_list_ab60dc942bd30e082a609e21b41186a0b}{Array\+List$<$ int $>$}}, \mbox{\hyperlink{class_array_list_ab60dc942bd30e082a609e21b41186a0b}{Array\+List$<$ std\+::pair$<$ double, double $>$ $>$}}, \mbox{\hyperlink{class_linked_list_a2f2053fb84d5f57b2e8f3f1824252ec9}{Linked\+List$<$ T $>$}}, and \mbox{\hyperlink{class_linked_list_a2f2053fb84d5f57b2e8f3f1824252ec9}{Linked\+List$<$ int $>$}}.
+
+\mbox{\Hypertarget{class_list_abc7957751426ef94973e3e55717b2e16}\label{class_list_abc7957751426ef94973e3e55717b2e16}} 
+\index{List$<$ T $>$@{List$<$ T $>$}!Empty@{Empty}}
+\index{Empty@{Empty}!List$<$ T $>$@{List$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Empty()}{Empty()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual bool \mbox{\hyperlink{class_list}{List}}$<$ T $>$\+::\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Determines if the \mbox{\hyperlink{class_list}{List}} is empty. 
+
+\begin{DoxyReturn}{Returns}
+True if the \mbox{\hyperlink{class_list}{List}} is empty, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_list_aa77538d22a5a846c0a21a4eab401d507}\label{class_list_aa77538d22a5a846c0a21a4eab401d507}} 
+\index{List$<$ T $>$@{List$<$ T $>$}!InsertionSort@{InsertionSort}}
+\index{InsertionSort@{InsertionSort}!List$<$ T $>$@{List$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{InsertionSort()}{InsertionSort()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual void \mbox{\hyperlink{class_list}{List}}$<$ T $>$\+::\+Insertion\+Sort (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sorts the \mbox{\hyperlink{class_list}{List}} in ascending order using the insertion sort algorithm. 
+
+
+
+Implemented in \mbox{\hyperlink{class_array_list_a43f46241081a4fa9d235212a3cb5ae36}{Array\+List$<$ T $>$}}, \mbox{\hyperlink{class_array_list_a43f46241081a4fa9d235212a3cb5ae36}{Array\+List$<$ int $>$}}, \mbox{\hyperlink{class_array_list_a43f46241081a4fa9d235212a3cb5ae36}{Array\+List$<$ std\+::pair$<$ double, double $>$ $>$}}, \mbox{\hyperlink{class_linked_list_a887809143be064488531c46de8621dfd}{Linked\+List$<$ T $>$}}, and \mbox{\hyperlink{class_linked_list_a887809143be064488531c46de8621dfd}{Linked\+List$<$ int $>$}}.
+
+\mbox{\Hypertarget{class_list_adf64d400bbe7205336919feb1a9dee93}\label{class_list_adf64d400bbe7205336919feb1a9dee93}} 
+\index{List$<$ T $>$@{List$<$ T $>$}!MergeSort@{MergeSort}}
+\index{MergeSort@{MergeSort}!List$<$ T $>$@{List$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{MergeSort()}{MergeSort()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual void \mbox{\hyperlink{class_list}{List}}$<$ T $>$\+::\+Merge\+Sort (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sorts the \mbox{\hyperlink{class_list}{List}} in ascending order using the merge sort algorithm. 
+
+
+
+Implemented in \mbox{\hyperlink{class_array_list_a5002c9a47ea3eed7b3bdb79d0eab8b03}{Array\+List$<$ T $>$}}, \mbox{\hyperlink{class_array_list_a5002c9a47ea3eed7b3bdb79d0eab8b03}{Array\+List$<$ int $>$}}, \mbox{\hyperlink{class_array_list_a5002c9a47ea3eed7b3bdb79d0eab8b03}{Array\+List$<$ std\+::pair$<$ double, double $>$ $>$}}, \mbox{\hyperlink{class_linked_list_a2678db889a829226be5ef0df3d85ebcc}{Linked\+List$<$ T $>$}}, and \mbox{\hyperlink{class_linked_list_a2678db889a829226be5ef0df3d85ebcc}{Linked\+List$<$ int $>$}}.
+
+\mbox{\Hypertarget{class_list_a629545f7e9120dbd89ae5afaf3e276da}\label{class_list_a629545f7e9120dbd89ae5afaf3e276da}} 
+\index{List$<$ T $>$@{List$<$ T $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!List$<$ T $>$@{List$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual T \& \mbox{\hyperlink{class_list}{List}}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets a reference to an element at a specific index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & The index of the element to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the element at the specified index. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_array_list_a153b97d26ca72a824cf536bb5c495199}{Array\+List$<$ T $>$}}, \mbox{\hyperlink{class_array_list_a153b97d26ca72a824cf536bb5c495199}{Array\+List$<$ int $>$}}, \mbox{\hyperlink{class_array_list_a153b97d26ca72a824cf536bb5c495199}{Array\+List$<$ std\+::pair$<$ double, double $>$ $>$}}, \mbox{\hyperlink{class_linked_list_a6e0c11596346e9ba5e7566ac60c9fa0e}{Linked\+List$<$ T $>$}}, and \mbox{\hyperlink{class_linked_list_a6e0c11596346e9ba5e7566ac60c9fa0e}{Linked\+List$<$ int $>$}}.
+
+\mbox{\Hypertarget{class_list_adea83780557db07651ecd5fcf402eafb}\label{class_list_adea83780557db07651ecd5fcf402eafb}} 
+\index{List$<$ T $>$@{List$<$ T $>$}!Peek@{Peek}}
+\index{Peek@{Peek}!List$<$ T $>$@{List$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Peek()}{Peek()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual T \mbox{\hyperlink{class_list}{List}}$<$ T $>$\+::\+Peek (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the value of the first element in the \mbox{\hyperlink{class_list}{List}}. 
+
+\begin{DoxyReturn}{Returns}
+The value of the first element in the \mbox{\hyperlink{class_list}{List}}. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_array_list_a8b078b0660ac85fed40a5c437353c8b7}{Array\+List$<$ T $>$}}, \mbox{\hyperlink{class_array_list_a8b078b0660ac85fed40a5c437353c8b7}{Array\+List$<$ int $>$}}, \mbox{\hyperlink{class_array_list_a8b078b0660ac85fed40a5c437353c8b7}{Array\+List$<$ std\+::pair$<$ double, double $>$ $>$}}, \mbox{\hyperlink{class_linked_list_aa5c8b190db84e470c42a63479b56cbe1}{Linked\+List$<$ T $>$}}, and \mbox{\hyperlink{class_linked_list_aa5c8b190db84e470c42a63479b56cbe1}{Linked\+List$<$ int $>$}}.
+
+\mbox{\Hypertarget{class_list_aaf83c847b4cc41273922a6f7cd4eb742}\label{class_list_aaf83c847b4cc41273922a6f7cd4eb742}} 
+\index{List$<$ T $>$@{List$<$ T $>$}!Pop\_back@{Pop\_back}}
+\index{Pop\_back@{Pop\_back}!List$<$ T $>$@{List$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Pop\_back()}{Pop\_back()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual void \mbox{\hyperlink{class_list}{List}}$<$ T $>$\+::\+Pop\+\_\+back (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Removes the last element from the \mbox{\hyperlink{class_list}{List}}. 
+
+
+
+Implemented in \mbox{\hyperlink{class_array_list_a93066225593b6837a22a50d74c835397}{Array\+List$<$ T $>$}}, \mbox{\hyperlink{class_array_list_a93066225593b6837a22a50d74c835397}{Array\+List$<$ int $>$}}, \mbox{\hyperlink{class_array_list_a93066225593b6837a22a50d74c835397}{Array\+List$<$ std\+::pair$<$ double, double $>$ $>$}}, \mbox{\hyperlink{class_linked_list_a3a9a8a54f4a100b15264dfaa81e5c76d}{Linked\+List$<$ T $>$}}, and \mbox{\hyperlink{class_linked_list_a3a9a8a54f4a100b15264dfaa81e5c76d}{Linked\+List$<$ int $>$}}.
+
+\mbox{\Hypertarget{class_list_a27f2eb8f5ccb150e05924ce66a500e27}\label{class_list_a27f2eb8f5ccb150e05924ce66a500e27}} 
+\index{List$<$ T $>$@{List$<$ T $>$}!Push\_back@{Push\_back}}
+\index{Push\_back@{Push\_back}!List$<$ T $>$@{List$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Push\_back()}{Push\_back()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual void \mbox{\hyperlink{class_list}{List}}$<$ T $>$\+::\+Push\+\_\+back (\begin{DoxyParamCaption}\item[{T}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Adds an element to the end of the \mbox{\hyperlink{class_list}{List}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The element to add to the \mbox{\hyperlink{class_list}{List}}. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_array_list_ace42b8c894f3ef3c7665ebaafae05591}{Array\+List$<$ int $>$}}, \mbox{\hyperlink{class_linked_list_ae23a0d8088de0ae2a7aea3d445ac5622}{Linked\+List$<$ int $>$}}, \mbox{\hyperlink{class_array_list_ace42b8c894f3ef3c7665ebaafae05591}{Array\+List$<$ std\+::pair$<$ double, double $>$ $>$}}, \mbox{\hyperlink{class_array_list_ace42b8c894f3ef3c7665ebaafae05591}{Array\+List$<$ T $>$}}, and \mbox{\hyperlink{class_linked_list_ae23a0d8088de0ae2a7aea3d445ac5622}{Linked\+List$<$ T $>$}}.
+
+\mbox{\Hypertarget{class_list_a520e5655d5e3d5575d1bbdab1e28343a}\label{class_list_a520e5655d5e3d5575d1bbdab1e28343a}} 
+\index{List$<$ T $>$@{List$<$ T $>$}!QuickSort@{QuickSort}}
+\index{QuickSort@{QuickSort}!List$<$ T $>$@{List$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{QuickSort()}{QuickSort()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual void \mbox{\hyperlink{class_list}{List}}$<$ T $>$\+::\+Quick\+Sort (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sorts the \mbox{\hyperlink{class_list}{List}} in ascending order using the quick sort algorithm. 
+
+
+
+Implemented in \mbox{\hyperlink{class_array_list_ab465f9cc27aa70996373cb95ec9b5c03}{Array\+List$<$ T $>$}}, \mbox{\hyperlink{class_array_list_ab465f9cc27aa70996373cb95ec9b5c03}{Array\+List$<$ int $>$}}, \mbox{\hyperlink{class_array_list_ab465f9cc27aa70996373cb95ec9b5c03}{Array\+List$<$ std\+::pair$<$ double, double $>$ $>$}}, \mbox{\hyperlink{class_linked_list_ad5e1b8bfd1b6d4bda20802701d687c54}{Linked\+List$<$ T $>$}}, and \mbox{\hyperlink{class_linked_list_ad5e1b8bfd1b6d4bda20802701d687c54}{Linked\+List$<$ int $>$}}.
+
+\mbox{\Hypertarget{class_list_ad580747764d1b7ce09d527564839746e}\label{class_list_ad580747764d1b7ce09d527564839746e}} 
+\index{List$<$ T $>$@{List$<$ T $>$}!SelectionSort@{SelectionSort}}
+\index{SelectionSort@{SelectionSort}!List$<$ T $>$@{List$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SelectionSort()}{SelectionSort()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual void \mbox{\hyperlink{class_list}{List}}$<$ T $>$\+::\+Selection\+Sort (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sorts the \mbox{\hyperlink{class_list}{List}} in ascending order using the selection sort algorithm. 
+
+
+
+Implemented in \mbox{\hyperlink{class_array_list_a27c883eb7db82b6e3d4f6bba3806c234}{Array\+List$<$ T $>$}}, \mbox{\hyperlink{class_array_list_a27c883eb7db82b6e3d4f6bba3806c234}{Array\+List$<$ int $>$}}, \mbox{\hyperlink{class_array_list_a27c883eb7db82b6e3d4f6bba3806c234}{Array\+List$<$ std\+::pair$<$ double, double $>$ $>$}}, \mbox{\hyperlink{class_linked_list_a06ff027f3ecd7d33fe6c2c6c89cce808}{Linked\+List$<$ T $>$}}, and \mbox{\hyperlink{class_linked_list_a06ff027f3ecd7d33fe6c2c6c89cce808}{Linked\+List$<$ int $>$}}.
+
+\mbox{\Hypertarget{class_list_a682b1bb417bc01b772118c557bb947d3}\label{class_list_a682b1bb417bc01b772118c557bb947d3}} 
+\index{List$<$ T $>$@{List$<$ T $>$}!Size@{Size}}
+\index{Size@{Size}!List$<$ T $>$@{List$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Size()}{Size()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual int \mbox{\hyperlink{class_list}{List}}$<$ T $>$\+::\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the current size of the \mbox{\hyperlink{class_list}{List}}. 
+
+\begin{DoxyReturn}{Returns}
+The size of the \mbox{\hyperlink{class_list}{List}}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+List.\+cpp\item 
+List.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,450 @@
+\hypertarget{class_figure}{}\doxysection{Figure Class Reference}
+\label{class_figure}\index{Figure@{Figure}}
+
+
+Represents a figure with a collection of points.  
+
+
+
+
+{\ttfamily \#include $<$Figure.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_figure_ab6281ef56d477886e862f4aa85c418ec}{ETriangle\+Side\+Type}} \{ \mbox{\hyperlink{class_figure_ab6281ef56d477886e862f4aa85c418ecae2bd6225e7dc4e60ee6f798a7d43df22}{ORDINARY}}
+, \mbox{\hyperlink{class_figure_ab6281ef56d477886e862f4aa85c418ecaca6ee335689c2e9f2b78e2dd9c43b7f4}{ISOSCELES}}
+, \mbox{\hyperlink{class_figure_ab6281ef56d477886e862f4aa85c418ecaab2fb24606ed0f8f7679f7835aa896d6}{EQUILATERAL}}
+, \mbox{\hyperlink{class_figure_ab6281ef56d477886e862f4aa85c418eca01f1d79ad0c77f4f410ba68a749358c1}{NOTATRIANGLE}}
+ \}
+\begin{DoxyCompactList}\small\item\em The types of triangles that can be determined from the figure. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{class_figure_a86a5e696562a78b9362247271ca7a06e}{ETriangle\+Angle\+Type}} \{ \mbox{\hyperlink{class_figure_a86a5e696562a78b9362247271ca7a06eaf21a0650b7f6611f56a5c8da458fa42e}{ACUTE}}
+, \mbox{\hyperlink{class_figure_a86a5e696562a78b9362247271ca7a06ea926728b6fb91273bc1ff2f25cada6411}{OBTUSE}}
+, \mbox{\hyperlink{class_figure_a86a5e696562a78b9362247271ca7a06eab7e91480f6add781bf528b474e7c95b0}{RECTANGULAR}}
+, \mbox{\hyperlink{class_figure_a86a5e696562a78b9362247271ca7a06ea5f470e6448e828f9f75a36e8d8081242}{NOTATRIANGLE2}}
+ \}
+\begin{DoxyCompactList}\small\item\em The types of angles that can be determined from the figure. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{class_figure_a10b5169a4c18085cd96ace6d182ff6d5}{EQuadrangle\+Type}} \{ \newline
+\mbox{\hyperlink{class_figure_a10b5169a4c18085cd96ace6d182ff6d5a52ed07b87981a192daf13979fcf33ac5}{SQUARE}}
+, \mbox{\hyperlink{class_figure_a10b5169a4c18085cd96ace6d182ff6d5a1178170ff8d0f58b27c13621f29ceebe}{DIAMOND}}
+, \mbox{\hyperlink{class_figure_a10b5169a4c18085cd96ace6d182ff6d5a309400bbdf5ab6417f85d882275979b3}{RECTANGLE}}
+, \mbox{\hyperlink{class_figure_a10b5169a4c18085cd96ace6d182ff6d5a18059d20dd0852c50912754c09d66aee}{PARALLELOGRAM}}
+, \newline
+\mbox{\hyperlink{class_figure_a10b5169a4c18085cd96ace6d182ff6d5a9c24a9e5d59b9b16b289e2f655240dbc}{TRAPEZE}}
+, \mbox{\hyperlink{class_figure_a10b5169a4c18085cd96ace6d182ff6d5a71e7e14c0cb4ce9cd1530760264fea3d}{ARBITARY}}
+, \mbox{\hyperlink{class_figure_a10b5169a4c18085cd96ace6d182ff6d5a1980887ee5f3388fba27e1662b75c5f4}{NOTAQUADRANGLE}}
+ \}
+\begin{DoxyCompactList}\small\item\em The types of quadrangles that can be determined from the figure. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{class_figure_afc4a9b5bbd9fb0c948d85f288438cee4}{ETrapeze\+Type}} \{ \mbox{\hyperlink{class_figure_afc4a9b5bbd9fb0c948d85f288438cee4a6e59832b7ca7e74355f243e91f8d9aa7}{ARBITARYT}}
+, \mbox{\hyperlink{class_figure_afc4a9b5bbd9fb0c948d85f288438cee4acf63abf1b2242201351e829675e36bb1}{ISOSCELEST}}
+, \mbox{\hyperlink{class_figure_afc4a9b5bbd9fb0c948d85f288438cee4ab1662a61a7ca9c6efd4f8365c13d1fa1}{RECTANGULART}}
+, \mbox{\hyperlink{class_figure_afc4a9b5bbd9fb0c948d85f288438cee4a5111a4053d0528f5f6a48c09689a66b3}{NOTATRAPEZE}}
+ \}
+\begin{DoxyCompactList}\small\item\em The types of trapezes that can be determined from the figure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_figure_a1d9e03a4db51fcdca64aa5137e72b076}\label{class_figure_a1d9e03a4db51fcdca64aa5137e72b076}} 
+{\bfseries Figure} ()
+\begin{DoxyCompactList}\small\item\em Constructs a new, empty \mbox{\hyperlink{class_figure}{Figure}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_figure_a1f552dd49703752b4895101544ed6c9c}{Figure}} (\mbox{\hyperlink{class_array_list}{Array\+List}}$<$ std\+::pair$<$ double, double $>$ $>$ list)
+\begin{DoxyCompactList}\small\item\em Constructs a new \mbox{\hyperlink{class_figure}{Figure}} object with the specified list of points. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_figure_a5404c31887bbe1004a20c5b2ce6b0599}{Figure}} (\mbox{\hyperlink{class_linked_list}{Linked\+List}}$<$ std\+::pair$<$ double, double $>$ $>$ list)
+\begin{DoxyCompactList}\small\item\em Constructs a new \mbox{\hyperlink{class_figure}{Figure}} object with the specified linked list of points. \end{DoxyCompactList}\item 
+std\+::pair$<$ double, double $>$ \& \mbox{\hyperlink{class_figure_a0bfa0aba026ea3dae43ea7d8cc857d76}{operator\mbox{[}$\,$\mbox{]}}} (int i)
+\begin{DoxyCompactList}\small\item\em Returns a reference to the point at the specified position in the figure. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_figure_a5e2f3fe41375b9a37c676725374118ea}{Add}} (std\+::pair$<$ double, double $>$ point)
+\begin{DoxyCompactList}\small\item\em Adds a point to the figure. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_figure_a42b42fe67de71eb7c1acd403b428ed12}{Add}} (double x, double y)
+\begin{DoxyCompactList}\small\item\em Adds a point to the \mbox{\hyperlink{class_figure}{Figure}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_figure_a6e4dbac1910b5565883e3f22a6b82abf}{Count}} ()
+\begin{DoxyCompactList}\small\item\em Returns the number of points in the \mbox{\hyperlink{class_figure}{Figure}}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_figure_aab1af097d450e9d95ba38dab306b7c57}{Area}} ()
+\begin{DoxyCompactList}\small\item\em Calculates and returns the area of the \mbox{\hyperlink{class_figure}{Figure}}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_figure_a066bbce79ff86f6791258437e37b3c90}{Perimeter}} ()
+\begin{DoxyCompactList}\small\item\em Calculates and returns the perimeter of the \mbox{\hyperlink{class_figure}{Figure}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_figure_a6c420fec56bf6ee794b9924926bdb551}{is\+Regular}} ()
+\begin{DoxyCompactList}\small\item\em Determines if the \mbox{\hyperlink{class_figure}{Figure}} is regular (i.\+e., all sides and angles are equal). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_figure_ab6281ef56d477886e862f4aa85c418ec}{ETriangle\+Side\+Type}} \mbox{\hyperlink{class_figure_a6673f8c451b2471e18e447bb85342454}{Triangle\+Side\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Returns the type of triangle based on the side lengths. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_figure_a86a5e696562a78b9362247271ca7a06e}{ETriangle\+Angle\+Type}} \mbox{\hyperlink{class_figure_a72982bfb5529aa01b5332a53bb50035e}{Triangle\+Angle\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Returns the type of triangle based on the angle measurements. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_figure_a10b5169a4c18085cd96ace6d182ff6d5}{EQuadrangle\+Type}} \mbox{\hyperlink{class_figure_aa6e4367be7044fd26fde9f602ab52fcd}{Quadrangle\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Returns the type of quadrangle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_figure_afc4a9b5bbd9fb0c948d85f288438cee4}{ETrapeze\+Type}} \mbox{\hyperlink{class_figure_a98d40f542a4d4212991791754be3dc25}{Trapeze\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Returns the type of trapeze. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static double \mbox{\hyperlink{class_figure_a7eea872752876bf78e63112143580944}{Distance}} (std\+::pair$<$ double, double $>$ p1, std\+::pair$<$ double, double $>$ p2)
+\begin{DoxyCompactList}\small\item\em Returns the distance between two points. \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{class_figure_a11150ad826ecde43f203ba8122f8ca72}{Angle}} (std\+::pair$<$ double, double $>$ p1, std\+::pair$<$ double, double $>$ p2, std\+::pair$<$ double, double $>$ p3)
+\begin{DoxyCompactList}\small\item\em Returns the angle between three points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a figure with a collection of points. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_figure_a10b5169a4c18085cd96ace6d182ff6d5}\label{class_figure_a10b5169a4c18085cd96ace6d182ff6d5}} 
+\index{Figure@{Figure}!EQuadrangleType@{EQuadrangleType}}
+\index{EQuadrangleType@{EQuadrangleType}!Figure@{Figure}}
+\doxysubsubsection{\texorpdfstring{EQuadrangleType}{EQuadrangleType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_figure_a10b5169a4c18085cd96ace6d182ff6d5}{Figure\+::\+EQuadrangle\+Type}}}
+
+
+
+The types of quadrangles that can be determined from the figure. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SQUARE@{SQUARE}!Figure@{Figure}}\index{Figure@{Figure}!SQUARE@{SQUARE}}}\mbox{\Hypertarget{class_figure_a10b5169a4c18085cd96ace6d182ff6d5a52ed07b87981a192daf13979fcf33ac5}\label{class_figure_a10b5169a4c18085cd96ace6d182ff6d5a52ed07b87981a192daf13979fcf33ac5}} 
+SQUARE&The quadrangle is a square. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DIAMOND@{DIAMOND}!Figure@{Figure}}\index{Figure@{Figure}!DIAMOND@{DIAMOND}}}\mbox{\Hypertarget{class_figure_a10b5169a4c18085cd96ace6d182ff6d5a1178170ff8d0f58b27c13621f29ceebe}\label{class_figure_a10b5169a4c18085cd96ace6d182ff6d5a1178170ff8d0f58b27c13621f29ceebe}} 
+DIAMOND&The quadrangle is a diamond (rhombus). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RECTANGLE@{RECTANGLE}!Figure@{Figure}}\index{Figure@{Figure}!RECTANGLE@{RECTANGLE}}}\mbox{\Hypertarget{class_figure_a10b5169a4c18085cd96ace6d182ff6d5a309400bbdf5ab6417f85d882275979b3}\label{class_figure_a10b5169a4c18085cd96ace6d182ff6d5a309400bbdf5ab6417f85d882275979b3}} 
+RECTANGLE&The quadrangle is a rectangle. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PARALLELOGRAM@{PARALLELOGRAM}!Figure@{Figure}}\index{Figure@{Figure}!PARALLELOGRAM@{PARALLELOGRAM}}}\mbox{\Hypertarget{class_figure_a10b5169a4c18085cd96ace6d182ff6d5a18059d20dd0852c50912754c09d66aee}\label{class_figure_a10b5169a4c18085cd96ace6d182ff6d5a18059d20dd0852c50912754c09d66aee}} 
+PARALLELOGRAM&The quadrangle is a parallelogram. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TRAPEZE@{TRAPEZE}!Figure@{Figure}}\index{Figure@{Figure}!TRAPEZE@{TRAPEZE}}}\mbox{\Hypertarget{class_figure_a10b5169a4c18085cd96ace6d182ff6d5a9c24a9e5d59b9b16b289e2f655240dbc}\label{class_figure_a10b5169a4c18085cd96ace6d182ff6d5a9c24a9e5d59b9b16b289e2f655240dbc}} 
+TRAPEZE&The quadrangle is a trapeze. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ARBITARY@{ARBITARY}!Figure@{Figure}}\index{Figure@{Figure}!ARBITARY@{ARBITARY}}}\mbox{\Hypertarget{class_figure_a10b5169a4c18085cd96ace6d182ff6d5a71e7e14c0cb4ce9cd1530760264fea3d}\label{class_figure_a10b5169a4c18085cd96ace6d182ff6d5a71e7e14c0cb4ce9cd1530760264fea3d}} 
+ARBITARY&The quadrangle is arbitrary (no specific type). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NOTAQUADRANGLE@{NOTAQUADRANGLE}!Figure@{Figure}}\index{Figure@{Figure}!NOTAQUADRANGLE@{NOTAQUADRANGLE}}}\mbox{\Hypertarget{class_figure_a10b5169a4c18085cd96ace6d182ff6d5a1980887ee5f3388fba27e1662b75c5f4}\label{class_figure_a10b5169a4c18085cd96ace6d182ff6d5a1980887ee5f3388fba27e1662b75c5f4}} 
+NOTAQUADRANGLE&The figure is not a quadrangle. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{class_figure_afc4a9b5bbd9fb0c948d85f288438cee4}\label{class_figure_afc4a9b5bbd9fb0c948d85f288438cee4}} 
+\index{Figure@{Figure}!ETrapezeType@{ETrapezeType}}
+\index{ETrapezeType@{ETrapezeType}!Figure@{Figure}}
+\doxysubsubsection{\texorpdfstring{ETrapezeType}{ETrapezeType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_figure_afc4a9b5bbd9fb0c948d85f288438cee4}{Figure\+::\+ETrapeze\+Type}}}
+
+
+
+The types of trapezes that can be determined from the figure. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ARBITARYT@{ARBITARYT}!Figure@{Figure}}\index{Figure@{Figure}!ARBITARYT@{ARBITARYT}}}\mbox{\Hypertarget{class_figure_afc4a9b5bbd9fb0c948d85f288438cee4a6e59832b7ca7e74355f243e91f8d9aa7}\label{class_figure_afc4a9b5bbd9fb0c948d85f288438cee4a6e59832b7ca7e74355f243e91f8d9aa7}} 
+ARBITARYT&The trapeze is arbitrary (no specific type). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ISOSCELEST@{ISOSCELEST}!Figure@{Figure}}\index{Figure@{Figure}!ISOSCELEST@{ISOSCELEST}}}\mbox{\Hypertarget{class_figure_afc4a9b5bbd9fb0c948d85f288438cee4acf63abf1b2242201351e829675e36bb1}\label{class_figure_afc4a9b5bbd9fb0c948d85f288438cee4acf63abf1b2242201351e829675e36bb1}} 
+ISOSCELEST&The trapeze is isosceles (two sides are parallel and two sides are not). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RECTANGULART@{RECTANGULART}!Figure@{Figure}}\index{Figure@{Figure}!RECTANGULART@{RECTANGULART}}}\mbox{\Hypertarget{class_figure_afc4a9b5bbd9fb0c948d85f288438cee4ab1662a61a7ca9c6efd4f8365c13d1fa1}\label{class_figure_afc4a9b5bbd9fb0c948d85f288438cee4ab1662a61a7ca9c6efd4f8365c13d1fa1}} 
+RECTANGULART&The trapeze is rectangular (two sides are perpendicular). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NOTATRAPEZE@{NOTATRAPEZE}!Figure@{Figure}}\index{Figure@{Figure}!NOTATRAPEZE@{NOTATRAPEZE}}}\mbox{\Hypertarget{class_figure_afc4a9b5bbd9fb0c948d85f288438cee4a5111a4053d0528f5f6a48c09689a66b3}\label{class_figure_afc4a9b5bbd9fb0c948d85f288438cee4a5111a4053d0528f5f6a48c09689a66b3}} 
+NOTATRAPEZE&The figure is not a trapeze. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{class_figure_a86a5e696562a78b9362247271ca7a06e}\label{class_figure_a86a5e696562a78b9362247271ca7a06e}} 
+\index{Figure@{Figure}!ETriangleAngleType@{ETriangleAngleType}}
+\index{ETriangleAngleType@{ETriangleAngleType}!Figure@{Figure}}
+\doxysubsubsection{\texorpdfstring{ETriangleAngleType}{ETriangleAngleType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_figure_a86a5e696562a78b9362247271ca7a06e}{Figure\+::\+ETriangle\+Angle\+Type}}}
+
+
+
+The types of angles that can be determined from the figure. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACUTE@{ACUTE}!Figure@{Figure}}\index{Figure@{Figure}!ACUTE@{ACUTE}}}\mbox{\Hypertarget{class_figure_a86a5e696562a78b9362247271ca7a06eaf21a0650b7f6611f56a5c8da458fa42e}\label{class_figure_a86a5e696562a78b9362247271ca7a06eaf21a0650b7f6611f56a5c8da458fa42e}} 
+ACUTE&The triangle is acute (all angles are less than 90 degrees). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OBTUSE@{OBTUSE}!Figure@{Figure}}\index{Figure@{Figure}!OBTUSE@{OBTUSE}}}\mbox{\Hypertarget{class_figure_a86a5e696562a78b9362247271ca7a06ea926728b6fb91273bc1ff2f25cada6411}\label{class_figure_a86a5e696562a78b9362247271ca7a06ea926728b6fb91273bc1ff2f25cada6411}} 
+OBTUSE&The triangle is obtuse (one angle is greater than 90 degrees). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RECTANGULAR@{RECTANGULAR}!Figure@{Figure}}\index{Figure@{Figure}!RECTANGULAR@{RECTANGULAR}}}\mbox{\Hypertarget{class_figure_a86a5e696562a78b9362247271ca7a06eab7e91480f6add781bf528b474e7c95b0}\label{class_figure_a86a5e696562a78b9362247271ca7a06eab7e91480f6add781bf528b474e7c95b0}} 
+RECTANGULAR&The triangle is rectangular (one angle is equal to 90 degrees). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NOTATRIANGLE2@{NOTATRIANGLE2}!Figure@{Figure}}\index{Figure@{Figure}!NOTATRIANGLE2@{NOTATRIANGLE2}}}\mbox{\Hypertarget{class_figure_a86a5e696562a78b9362247271ca7a06ea5f470e6448e828f9f75a36e8d8081242}\label{class_figure_a86a5e696562a78b9362247271ca7a06ea5f470e6448e828f9f75a36e8d8081242}} 
+NOTATRIANGLE2&The figure is not a triangle. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{class_figure_ab6281ef56d477886e862f4aa85c418ec}\label{class_figure_ab6281ef56d477886e862f4aa85c418ec}} 
+\index{Figure@{Figure}!ETriangleSideType@{ETriangleSideType}}
+\index{ETriangleSideType@{ETriangleSideType}!Figure@{Figure}}
+\doxysubsubsection{\texorpdfstring{ETriangleSideType}{ETriangleSideType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_figure_ab6281ef56d477886e862f4aa85c418ec}{Figure\+::\+ETriangle\+Side\+Type}}}
+
+
+
+The types of triangles that can be determined from the figure. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ORDINARY@{ORDINARY}!Figure@{Figure}}\index{Figure@{Figure}!ORDINARY@{ORDINARY}}}\mbox{\Hypertarget{class_figure_ab6281ef56d477886e862f4aa85c418ecae2bd6225e7dc4e60ee6f798a7d43df22}\label{class_figure_ab6281ef56d477886e862f4aa85c418ecae2bd6225e7dc4e60ee6f798a7d43df22}} 
+ORDINARY&The triangle is ordinary (no equal sides). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ISOSCELES@{ISOSCELES}!Figure@{Figure}}\index{Figure@{Figure}!ISOSCELES@{ISOSCELES}}}\mbox{\Hypertarget{class_figure_ab6281ef56d477886e862f4aa85c418ecaca6ee335689c2e9f2b78e2dd9c43b7f4}\label{class_figure_ab6281ef56d477886e862f4aa85c418ecaca6ee335689c2e9f2b78e2dd9c43b7f4}} 
+ISOSCELES&The triangle is isosceles (two equal sides). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EQUILATERAL@{EQUILATERAL}!Figure@{Figure}}\index{Figure@{Figure}!EQUILATERAL@{EQUILATERAL}}}\mbox{\Hypertarget{class_figure_ab6281ef56d477886e862f4aa85c418ecaab2fb24606ed0f8f7679f7835aa896d6}\label{class_figure_ab6281ef56d477886e862f4aa85c418ecaab2fb24606ed0f8f7679f7835aa896d6}} 
+EQUILATERAL&The triangle is equilateral (all sides are equal). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NOTATRIANGLE@{NOTATRIANGLE}!Figure@{Figure}}\index{Figure@{Figure}!NOTATRIANGLE@{NOTATRIANGLE}}}\mbox{\Hypertarget{class_figure_ab6281ef56d477886e862f4aa85c418eca01f1d79ad0c77f4f410ba68a749358c1}\label{class_figure_ab6281ef56d477886e862f4aa85c418eca01f1d79ad0c77f4f410ba68a749358c1}} 
+NOTATRIANGLE&The figure is not a triangle. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_figure_a1f552dd49703752b4895101544ed6c9c}\label{class_figure_a1f552dd49703752b4895101544ed6c9c}} 
+\index{Figure@{Figure}!Figure@{Figure}}
+\index{Figure@{Figure}!Figure@{Figure}}
+\doxysubsubsection{\texorpdfstring{Figure()}{Figure()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Figure\+::\+Figure (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_array_list}{Array\+List}}$<$ std\+::pair$<$ double, double $>$ $>$}]{list }\end{DoxyParamCaption})}
+
+
+
+Constructs a new \mbox{\hyperlink{class_figure}{Figure}} object with the specified list of points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & The Array list of points to initialize the \mbox{\hyperlink{class_figure}{Figure}} with. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_figure_a5404c31887bbe1004a20c5b2ce6b0599}\label{class_figure_a5404c31887bbe1004a20c5b2ce6b0599}} 
+\index{Figure@{Figure}!Figure@{Figure}}
+\index{Figure@{Figure}!Figure@{Figure}}
+\doxysubsubsection{\texorpdfstring{Figure()}{Figure()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Figure\+::\+Figure (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_linked_list}{Linked\+List}}$<$ std\+::pair$<$ double, double $>$ $>$}]{list }\end{DoxyParamCaption})}
+
+
+
+Constructs a new \mbox{\hyperlink{class_figure}{Figure}} object with the specified linked list of points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & The linked list of points to initialize the \mbox{\hyperlink{class_figure}{Figure}} with. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_figure_a42b42fe67de71eb7c1acd403b428ed12}\label{class_figure_a42b42fe67de71eb7c1acd403b428ed12}} 
+\index{Figure@{Figure}!Add@{Add}}
+\index{Add@{Add}!Figure@{Figure}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Figure\+::\+Add (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption})}
+
+
+
+Adds a point to the \mbox{\hyperlink{class_figure}{Figure}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x-\/coordinate of the point to add. \\
+\hline
+{\em y} & The y-\/coordinate of the point to add. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_figure_a5e2f3fe41375b9a37c676725374118ea}\label{class_figure_a5e2f3fe41375b9a37c676725374118ea}} 
+\index{Figure@{Figure}!Add@{Add}}
+\index{Add@{Add}!Figure@{Figure}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Figure\+::\+Add (\begin{DoxyParamCaption}\item[{std\+::pair$<$ double, double $>$}]{point }\end{DoxyParamCaption})}
+
+
+
+Adds a point to the figure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & The point to add to the figure. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_figure_a11150ad826ecde43f203ba8122f8ca72}\label{class_figure_a11150ad826ecde43f203ba8122f8ca72}} 
+\index{Figure@{Figure}!Angle@{Angle}}
+\index{Angle@{Angle}!Figure@{Figure}}
+\doxysubsubsection{\texorpdfstring{Angle()}{Angle()}}
+{\footnotesize\ttfamily double Figure\+::\+Angle (\begin{DoxyParamCaption}\item[{std\+::pair$<$ double, double $>$}]{p1,  }\item[{std\+::pair$<$ double, double $>$}]{p2,  }\item[{std\+::pair$<$ double, double $>$}]{p3 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the angle between three points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & The first point. \\
+\hline
+{\em p2} & The second point. \\
+\hline
+{\em p3} & The third point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The angle between the three points. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_figure_aab1af097d450e9d95ba38dab306b7c57}\label{class_figure_aab1af097d450e9d95ba38dab306b7c57}} 
+\index{Figure@{Figure}!Area@{Area}}
+\index{Area@{Area}!Figure@{Figure}}
+\doxysubsubsection{\texorpdfstring{Area()}{Area()}}
+{\footnotesize\ttfamily double Figure\+::\+Area (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculates and returns the area of the \mbox{\hyperlink{class_figure}{Figure}}. 
+
+\begin{DoxyReturn}{Returns}
+The area of the \mbox{\hyperlink{class_figure}{Figure}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_figure_a6e4dbac1910b5565883e3f22a6b82abf}\label{class_figure_a6e4dbac1910b5565883e3f22a6b82abf}} 
+\index{Figure@{Figure}!Count@{Count}}
+\index{Count@{Count}!Figure@{Figure}}
+\doxysubsubsection{\texorpdfstring{Count()}{Count()}}
+{\footnotesize\ttfamily int Figure\+::\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the number of points in the \mbox{\hyperlink{class_figure}{Figure}}. 
+
+\begin{DoxyReturn}{Returns}
+The number of points in the \mbox{\hyperlink{class_figure}{Figure}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_figure_a7eea872752876bf78e63112143580944}\label{class_figure_a7eea872752876bf78e63112143580944}} 
+\index{Figure@{Figure}!Distance@{Distance}}
+\index{Distance@{Distance}!Figure@{Figure}}
+\doxysubsubsection{\texorpdfstring{Distance()}{Distance()}}
+{\footnotesize\ttfamily double Figure\+::\+Distance (\begin{DoxyParamCaption}\item[{std\+::pair$<$ double, double $>$}]{p1,  }\item[{std\+::pair$<$ double, double $>$}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the distance between two points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & The first point. \\
+\hline
+{\em p2} & The second point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The distance between the two points. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_figure_a6c420fec56bf6ee794b9924926bdb551}\label{class_figure_a6c420fec56bf6ee794b9924926bdb551}} 
+\index{Figure@{Figure}!isRegular@{isRegular}}
+\index{isRegular@{isRegular}!Figure@{Figure}}
+\doxysubsubsection{\texorpdfstring{isRegular()}{isRegular()}}
+{\footnotesize\ttfamily bool Figure\+::is\+Regular (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Determines if the \mbox{\hyperlink{class_figure}{Figure}} is regular (i.\+e., all sides and angles are equal). 
+
+\begin{DoxyReturn}{Returns}
+True if the \mbox{\hyperlink{class_figure}{Figure}} is regular, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_figure_a0bfa0aba026ea3dae43ea7d8cc857d76}\label{class_figure_a0bfa0aba026ea3dae43ea7d8cc857d76}} 
+\index{Figure@{Figure}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Figure@{Figure}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily std\+::pair$<$ double, double $>$ \& Figure\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Returns a reference to the point at the specified position in the figure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & The index of the point to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the point at the specified position in the figure. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_figure_a066bbce79ff86f6791258437e37b3c90}\label{class_figure_a066bbce79ff86f6791258437e37b3c90}} 
+\index{Figure@{Figure}!Perimeter@{Perimeter}}
+\index{Perimeter@{Perimeter}!Figure@{Figure}}
+\doxysubsubsection{\texorpdfstring{Perimeter()}{Perimeter()}}
+{\footnotesize\ttfamily double Figure\+::\+Perimeter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculates and returns the perimeter of the \mbox{\hyperlink{class_figure}{Figure}}. 
+
+\begin{DoxyReturn}{Returns}
+The perimeter of the \mbox{\hyperlink{class_figure}{Figure}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_figure_aa6e4367be7044fd26fde9f602ab52fcd}\label{class_figure_aa6e4367be7044fd26fde9f602ab52fcd}} 
+\index{Figure@{Figure}!QuadrangleType@{QuadrangleType}}
+\index{QuadrangleType@{QuadrangleType}!Figure@{Figure}}
+\doxysubsubsection{\texorpdfstring{QuadrangleType()}{QuadrangleType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_figure_a10b5169a4c18085cd96ace6d182ff6d5}{Figure\+::\+EQuadrangle\+Type}} Figure\+::\+Quadrangle\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the type of quadrangle. 
+
+\begin{DoxyReturn}{Returns}
+The type of quadrangle. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_figure_a98d40f542a4d4212991791754be3dc25}\label{class_figure_a98d40f542a4d4212991791754be3dc25}} 
+\index{Figure@{Figure}!TrapezeType@{TrapezeType}}
+\index{TrapezeType@{TrapezeType}!Figure@{Figure}}
+\doxysubsubsection{\texorpdfstring{TrapezeType()}{TrapezeType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_figure_afc4a9b5bbd9fb0c948d85f288438cee4}{Figure\+::\+ETrapeze\+Type}} Figure\+::\+Trapeze\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the type of trapeze. 
+
+\begin{DoxyReturn}{Returns}
+The type of trapeze. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_figure_a72982bfb5529aa01b5332a53bb50035e}\label{class_figure_a72982bfb5529aa01b5332a53bb50035e}} 
+\index{Figure@{Figure}!TriangleAngleType@{TriangleAngleType}}
+\index{TriangleAngleType@{TriangleAngleType}!Figure@{Figure}}
+\doxysubsubsection{\texorpdfstring{TriangleAngleType()}{TriangleAngleType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_figure_a86a5e696562a78b9362247271ca7a06e}{Figure\+::\+ETriangle\+Angle\+Type}} Figure\+::\+Triangle\+Angle\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the type of triangle based on the angle measurements. 
+
+\begin{DoxyReturn}{Returns}
+The type of triangle based on the angle measurements. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_figure_a6673f8c451b2471e18e447bb85342454}\label{class_figure_a6673f8c451b2471e18e447bb85342454}} 
+\index{Figure@{Figure}!TriangleSideType@{TriangleSideType}}
+\index{TriangleSideType@{TriangleSideType}!Figure@{Figure}}
+\doxysubsubsection{\texorpdfstring{TriangleSideType()}{TriangleSideType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_figure_ab6281ef56d477886e862f4aa85c418ec}{Figure\+::\+ETriangle\+Side\+Type}} Figure\+::\+Triangle\+Side\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the type of triangle based on the side lengths. 
+
+\begin{DoxyReturn}{Returns}
+The type of triangle based on the side lengths. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Figure.\+h\item 
+Figure.\+cpp\end{DoxyCompactItemize}

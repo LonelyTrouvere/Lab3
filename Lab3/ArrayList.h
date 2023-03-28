@@ -2,6 +2,9 @@
 #include "List.h"
 #include <stdexcept>
 #include <cstring>
+/**
+ * @brief Represents an Array list container.
+ */
 template <typename T>
 class ArrayList : public List<T>
 {
@@ -15,17 +18,70 @@ private:
     int Partition(int begin, int end);
 public:
     ArrayList();
+    /**
+ * \brief Overloads the [] operator to access elements of the list.
+ *
+ * \param i Index of the element to be accessed.
+ *
+ * \return Reference to the element at the specified index.
+ */
     T& operator[](int i) override;
-    void Push_back(T data) override;
-    void Pop_back() override;
-    void Clear()override;
-    T Peek()override;
+    /**
+ * \brief Adds a new element to the end of the container.
+ *
+ * \tparam T The type of the elements in the container.
+ * \param data The element to be added to the container.
+ */
+ void Push_back(T data) override;
 
-//sorts
-    void InsertionSort() override;
+ /**
+ * @brief Removes the last element from the container.
+ *
+ */
+ void Pop_back() override;
+
+ /**
+ * @brief Removes all elements from the container.
+ *
+ */
+ void Clear()override;
+
+ /**
+  * @brief Returns the last element of the container.
+  *
+  * @tparam T The type of the elements in the container.
+  * @return The last element of the container.
+  */
+ T Peek()override;
+
+ /**
+  * @brief Sorts the elements of the container using the insertion sort algorithm.
+  *
+  */
+ void InsertionSort() override;
+
+    /**
+     * @brief Sorts the elements of the container using the bubble sort algorithm.
+     *
+     */
     void BubbleSort() override;
+
+    /**
+     * @brief Sorts the elements of the container using the selection sort algorithm.
+     *
+     */
     void SelectionSort() override;
+
+    /**
+     * @brief Sorts the elements of the container using the merge sort algorithm.
+     *
+     */
     void MergeSort() override;
+
+    /**
+     * @brief Sorts the elements of the container using the quick sort algorithm.
+     *
+     */
     void QuickSort() override;
 };
 

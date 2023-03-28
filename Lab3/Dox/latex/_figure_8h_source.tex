@@ -1,0 +1,102 @@
+\hypertarget{_figure_8h_source}{}\doxysection{Figure.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include"{}List.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include"{}LinkedList.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include"{}ArrayList.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ M\_PI}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ M\_PI\ 3.14159265358979323846}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_figure}{Figure}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_array_list}{ArrayList<std::pair<double,\ double>}}>\ points;\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_figure_a1d9e03a4db51fcdca64aa5137e72b076}{Figure}}();}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_figure_a1d9e03a4db51fcdca64aa5137e72b076}{Figure}}(\mbox{\hyperlink{class_array_list}{ArrayList}}<std::pair<double,\ double>>\ list);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_figure_a1d9e03a4db51fcdca64aa5137e72b076}{Figure}}(\mbox{\hyperlink{class_linked_list}{LinkedList}}<std::pair<double,\ double>>\ list);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{class_figure_ab6281ef56d477886e862f4aa85c418ec}{ETriangleSideType}}\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_figure_ab6281ef56d477886e862f4aa85c418ecae2bd6225e7dc4e60ee6f798a7d43df22}{ORDINARY}},\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_figure_ab6281ef56d477886e862f4aa85c418ecaca6ee335689c2e9f2b78e2dd9c43b7f4}{ISOSCELES}},\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_figure_ab6281ef56d477886e862f4aa85c418ecaab2fb24606ed0f8f7679f7835aa896d6}{EQUILATERAL}},\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_figure_ab6281ef56d477886e862f4aa85c418eca01f1d79ad0c77f4f410ba68a749358c1}{NOTATRIANGLE}}\ }
+\DoxyCodeLine{00045\ \ \ \ \ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{class_figure_a86a5e696562a78b9362247271ca7a06e}{ETriangleAngleType}}\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_figure_a86a5e696562a78b9362247271ca7a06eaf21a0650b7f6611f56a5c8da458fa42e}{ACUTE}},\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_figure_a86a5e696562a78b9362247271ca7a06ea926728b6fb91273bc1ff2f25cada6411}{OBTUSE}},\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_figure_a86a5e696562a78b9362247271ca7a06eab7e91480f6add781bf528b474e7c95b0}{RECTANGULAR}},\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_figure_a86a5e696562a78b9362247271ca7a06ea5f470e6448e828f9f75a36e8d8081242}{NOTATRIANGLE2}}\ }
+\DoxyCodeLine{00055\ \ \ \ \ \};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{class_figure_a10b5169a4c18085cd96ace6d182ff6d5}{EQuadrangleType}}\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_figure_a10b5169a4c18085cd96ace6d182ff6d5a52ed07b87981a192daf13979fcf33ac5}{SQUARE}},\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_figure_a10b5169a4c18085cd96ace6d182ff6d5a1178170ff8d0f58b27c13621f29ceebe}{DIAMOND}},\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_figure_a10b5169a4c18085cd96ace6d182ff6d5a309400bbdf5ab6417f85d882275979b3}{RECTANGLE}},\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_figure_a10b5169a4c18085cd96ace6d182ff6d5a18059d20dd0852c50912754c09d66aee}{PARALLELOGRAM}},\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_figure_a10b5169a4c18085cd96ace6d182ff6d5a9c24a9e5d59b9b16b289e2f655240dbc}{TRAPEZE}},\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_figure_a10b5169a4c18085cd96ace6d182ff6d5a71e7e14c0cb4ce9cd1530760264fea3d}{ARBITARY}},\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_figure_a10b5169a4c18085cd96ace6d182ff6d5a1980887ee5f3388fba27e1662b75c5f4}{NOTAQUADRANGLE}}\ }
+\DoxyCodeLine{00068\ \ \ \ \ \};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{class_figure_afc4a9b5bbd9fb0c948d85f288438cee4}{ETrapezeType}}\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_figure_afc4a9b5bbd9fb0c948d85f288438cee4a6e59832b7ca7e74355f243e91f8d9aa7}{ARBITARYT}},\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_figure_afc4a9b5bbd9fb0c948d85f288438cee4acf63abf1b2242201351e829675e36bb1}{ISOSCELEST}},\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_figure_afc4a9b5bbd9fb0c948d85f288438cee4ab1662a61a7ca9c6efd4f8365c13d1fa1}{RECTANGULART}},\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_figure_afc4a9b5bbd9fb0c948d85f288438cee4a5111a4053d0528f5f6a48c09689a66b3}{NOTATRAPEZE}}\ }
+\DoxyCodeLine{00078\ \ \ \ \ \};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00086\ \ \ \ \ std::pair<double,\ double>\&\ \mbox{\hyperlink{class_figure_a0bfa0aba026ea3dae43ea7d8cc857d76}{operator[]}}(\textcolor{keywordtype}{int}\ i);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_figure_a5e2f3fe41375b9a37c676725374118ea}{Add}}(std::pair<double,\ double>\ point);}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_figure_a5e2f3fe41375b9a37c676725374118ea}{Add}}(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_figure_a6e4dbac1910b5565883e3f22a6b82abf}{Count}}();}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_figure_a7eea872752876bf78e63112143580944}{Distance}}(std::pair<double,\ double>\ p1,\ std::pair<double,\ double>\ p2);}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_figure_a11150ad826ecde43f203ba8122f8ca72}{Angle}}(std::pair<double,\ double>\ p1,\ std::pair<double,\ double>\ p2,\ std::pair<double,\ double>\ p3);}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_figure_aab1af097d450e9d95ba38dab306b7c57}{Area}}();}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_figure_a066bbce79ff86f6791258437e37b3c90}{Perimeter}}();}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_figure_a6c420fec56bf6ee794b9924926bdb551}{isRegular}}();}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00146\ \ \ \ \ \mbox{\hyperlink{class_figure_ab6281ef56d477886e862f4aa85c418ec}{ETriangleSideType}}\ \mbox{\hyperlink{class_figure_a6673f8c451b2471e18e447bb85342454}{TriangleSideType}}();}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00152\ \ \ \ \ \mbox{\hyperlink{class_figure_a86a5e696562a78b9362247271ca7a06e}{ETriangleAngleType}}\ \mbox{\hyperlink{class_figure_a72982bfb5529aa01b5332a53bb50035e}{TriangleAngleType}}();}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00158\ \ \ \ \ \mbox{\hyperlink{class_figure_a10b5169a4c18085cd96ace6d182ff6d5}{EQuadrangleType}}\ \mbox{\hyperlink{class_figure_aa6e4367be7044fd26fde9f602ab52fcd}{QuadrangleType}}();}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00164\ \ \ \ \ \mbox{\hyperlink{class_figure_afc4a9b5bbd9fb0c948d85f288438cee4}{ETrapezeType}}\ \mbox{\hyperlink{class_figure_a98d40f542a4d4212991791754be3dc25}{TrapezeType}}();}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{comment}{//Перевірки на різні\ типи\ фігур}}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{comment}{//Перевірки трикутника}}
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordtype}{bool}\ IsoscelesTriangle();}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordtype}{bool}\ RectangularTriangle();}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordtype}{bool}\ ObtuseAngular();}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{comment}{//Перевірки типів чотирикутника}}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordtype}{bool}\ Square();}
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{bool}\ Diamond();}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordtype}{bool}\ Rectangle();}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordtype}{bool}\ Parallelogram();}
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordtype}{bool}\ Trapeze();}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{comment}{//Перевірка типу\ трапеції}}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordtype}{bool}\ IsoscelesTrapeze();}
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordtype}{bool}\ RectengularTrapeze();}
+\DoxyCodeLine{00184\ \};}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ }
+
+\end{DoxyCode}

@@ -3,6 +3,10 @@
 #include <limits>
 #include <stdexcept>
 
+
+/**
+ * @brief Represents a Linked list container.
+ */
 template <typename T>
 class LinkedList : public List<T>
 {
@@ -152,17 +156,80 @@ private:
     }
 public:
     LinkedList();
+    /**
+  * @brief Returns a reference to the element at the specified position in the container.
+  *
+  * @tparam T The type of the elements in the container.
+  * @param i The position of the element to return.
+  * @return A reference to the element at the specified position in the container.
+  */
     T& operator[](int i) override;
+
+    /**
+     * @brief Adds a new element to the end of the container.
+     *
+     * @tparam T The type of the elements in the container.
+     * @param data The element to be added to the container.
+     */
     void Push_back(T data) override;
+
+    /**
+     * @brief Removes the last element from the container.
+     *
+     */
     void Pop_back() override;
+
+    /**
+     * @brief Sets the value of the element at the specified position in the container.
+     *
+     * @tparam T The type of the elements in the container.
+     * @param data The new value of the element.
+     * @param i The position of the element to set.
+     */
     void Set(T data, int i);
+
+    /**
+     * @brief Removes all elements from the container.
+     *
+     */
     void Clear()override;
+
+    /**
+     * @brief Returns the last element of the container.
+     *
+     * @tparam T The type of the elements in the container.
+     * @return The last element of the container.
+     */
     T Peek()override;
-//sorts
+
+    /**
+     * @brief Sorts the elements of the container using the insertion sort algorithm.
+     *
+     */
     void InsertionSort() override;
+
+    /**
+     * @brief Sorts the elements of the container using the bubble sort algorithm.
+     *
+     */
     void BubbleSort() override;
+
+    /**
+     * @brief Sorts the elements of the container using the selection sort algorithm.
+     *
+     */
     void SelectionSort() override;
+
+    /**
+     * @brief Sorts the elements of the container using the merge sort algorithm.
+     *
+     */
     void MergeSort() override;
+
+    /**
+     * @brief Sorts the elements of the container using the quick sort algorithm.
+     *
+     */
     void QuickSort() override;
 };
 
